@@ -1,0 +1,54 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    name: Release Please
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          # A personal access token lets CI run on the release pull request.
+          # Falls back to GITHUB_TOKEN, whose pull requests do not trigger workflows.
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  firmware-asset:
+    name: Attach firmware to release
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PlatformIO
+        run: pip install --upgrade platformio
+      - name: Build
+        run: pio run --project-dir firmware
+      - name: Upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.release-please.outputs.tag_name }}
+        run: |
+          cp firmware/.pio/build/esp32dev/firmware.bin "dimpsy-firmware-${TAG}-esp32dev.bin"
+          gh release upload "$TAG" "dimpsy-firmware-${TAG}-esp32dev.bin" --clobber
