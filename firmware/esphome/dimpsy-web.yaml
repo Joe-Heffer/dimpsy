@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2026 Joe Heffer
 #
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 
 # Build of the Dimpsy prototype firmware for flashing from the website with
 # ESP Web Tools (docs/flash.md). It is dimpsy.yaml with the private settings

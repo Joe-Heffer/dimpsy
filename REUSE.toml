@@ -10,25 +10,25 @@ version = 1
 path = "firmware/**"
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Joe Heffer"
-SPDX-License-Identifier = "GPL-3.0-or-later"
+SPDX-License-Identifier = "MIT"
 
 [[annotations]]
 path = "hardware/**"
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Joe Heffer"
-SPDX-License-Identifier = "CERN-OHL-S-2.0"
+SPDX-License-Identifier = "CERN-OHL-P-2.0"
 
 [[annotations]]
 path = "enclosure/**"
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Joe Heffer"
-SPDX-License-Identifier = "CC-BY-SA-4.0"
+SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
 path = "docs/**"
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Joe Heffer"
-SPDX-License-Identifier = "CC-BY-SA-4.0"
+SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
 path = [".editorconfig-checker.json", "release-please-config.json", ".release-please-manifest.json", "version.txt"]

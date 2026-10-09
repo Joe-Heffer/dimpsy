@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Changelog
@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * `AGENTS.md` with guidance for AI coding agents.
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
 * Decision 0005: the first prototype uses the IKEA Fado as the lamp body.
+* Decision 0008: what to reuse from other projects. `THIRD_PARTY.md` now records verified licences and adds ESPHome and HA-Sunrise-Lamp-Alarm.
 * CI job that validates ESPHome configs in `firmware/esphome/` with `esphome config`. It skips when none exist.
 * “Works without a network” design principle: the lamp works offline from its controls by default, and any smart home link is optional.
 * `firmware/core/brightness.h` with the candidate perceptual brightness curves (exponential, CIE 1931 lightness and gamma), native unit tests, and a CI job that runs them and charts each curve in the job summary.
@@ -35,6 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+* Licences are now permissive (decision 0009, superseding 0002): MIT for firmware and other code, CERN-OHL-P-2.0 for hardware and CC-BY-4.0 for the enclosure and documentation. Firmware binaries built with ESPHome are GPL-3.0 as a whole because they contain the ESPHome runtime.
 * The website and Wokwi workflows run only when files they depend on change.
 * Decision 0004 now records the options it did not choose (WLED and ESPHome with Home Assistant), that no Home Assistant is needed, and the conditions still to check.
 * Firmware platform is now ESPHome (decision 0004). `firmware/esphome/` holds `dimpsy.yaml` and `secrets.yaml.example` in place of the PlatformIO project, and CI validates and builds the configuration with ESPHome.

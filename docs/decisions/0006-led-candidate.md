@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # 0006: LED candidate for the prototype

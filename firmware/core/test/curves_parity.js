@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2026 Joe Heffer
 //
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-License-Identifier: MIT
 
 // Checks that the browser port in docs/tools/brightness.js matches the C++
 // curves. Reads the output of `make csv` on standard input:

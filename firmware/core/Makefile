@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2026 Joe Heffer
 #
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 
 # Native builds of the firmware core, for tests and tools.
 #

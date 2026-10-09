@@ -15,9 +15,9 @@ authors:
     given-names: Joe
 repository-code: "https://github.com/Joe-Heffer/dimpsy"
 license:
-  - GPL-3.0-or-later
-  - CERN-OHL-S-2.0
-  - CC-BY-SA-4.0
+  - MIT
+  - CERN-OHL-P-2.0
+  - CC-BY-4.0
   - CC0-1.0
 keywords:
   - sleep

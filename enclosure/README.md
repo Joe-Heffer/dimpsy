@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Enclosure
@@ -13,6 +13,6 @@ The physical design of the lamp goes here:
 
 Keep the CAD source next to each exported STL so that others can modify the design and not only reprint it.
 
-Files in this folder are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0). CAD and STL files cannot carry licence headers, so `REUSE.toml` covers them.
+Files in this folder are licensed under Creative Commons Attribution 4.0 International (CC-BY-4.0). CAD and STL files cannot carry licence headers, so `REUSE.toml` covers them.
 
 Nothing has been designed yet.

@@ -1,12 +1,12 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # 0002: Licence each folder separately and follow REUSE
 
-* **Status:** Accepted
+* **Status:** Superseded by [0009](0009-permissive-licences.md)
 * **Date:** 2026-10-09
 * **Deciders:** Joe Heffer
 
