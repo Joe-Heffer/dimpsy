@@ -12,6 +12,7 @@ The Dimpsy prototype runs [ESPHome](https://esphome.io) on an ESP32 DevKitC. The
 
 * `esphome/dimpsy.yaml`: the ESPHome configuration.
 * `esphome/secrets.yaml.example`: a template for `secrets.yaml`, which holds Wi-Fi and update passwords and is not committed.
+* `esphome/diagram.json`, `esphome/wokwi.toml` and `esphome/scenarios/`: the [Wokwi](https://wokwi.com) simulation (see below).
 * `core/`: plain C++ for the lamp’s behaviour, with no ESPHome or Arduino code, so it can be tested on a computer. It holds the candidate brightness curves from [#16](https://github.com/Joe-Heffer/dimpsy/issues/16) in `brightness.h`, their unit tests and a tool that prints them.
 
 ## Build and flash
@@ -26,6 +27,14 @@ esphome run dimpsy.yaml                # compile, flash and show logs
 ```
 
 Run these from the `firmware/esphome/` folder.
+
+## Simulation
+
+The `esphome/` folder is a [Wokwi](https://wokwi.com) project. `diagram.json` wires an ESP32 DevKitC to two rotary encoders, a slide potentiometer, a toggle switch, a button and a DS1307 clock using the pins in [decision 0007](../docs/decisions/0007-microcontroller-board.md). Wokwi has no SK6812 strip or TSL2591 light sensor in this diagram, so the lamp output is not simulated.
+
+To try it by hand, run `esphome compile dimpsy.yaml`, then open the folder with the [Wokwi for VS Code](https://docs.wokwi.com/vscode/getting-started) extension.
+
+CI runs the scenarios in `esphome/scenarios/` with `wokwi/wokwi-ci-action`. It needs a [Wokwi CI token](https://wokwi.com/dashboard/ci) saved as the repository secret `WOKWI_CLI_TOKEN`. Without the secret, as on pull requests from forks, the job skips with a notice. The first scenario checks that the firmware boots with no Wi-Fi network. Scenarios for the controls follow once they are in `dimpsy.yaml` ([#9](https://github.com/Joe-Heffer/dimpsy/issues/9)).
 
 ## Core tests and curves
 
