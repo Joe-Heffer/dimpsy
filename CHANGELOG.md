@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Prototype block diagram and line drawing in `docs/prototype.md`.
 * Decision records in `docs/decisions/`, one file per decision, with a template and index.
 * Prototype parts list in `hardware/prototype-parts.csv`.
+* `docs/README.md`, an overview of the docs folder.
 * Pull request template and issue templates for tasks and decisions.
 * Working-together and large-file guidance in `CONTRIBUTING.md`.
 * Hardware organisation guidance in `docs/hardware-practices.md` and a prototype bill of materials template in `hardware/bom.csv`.
