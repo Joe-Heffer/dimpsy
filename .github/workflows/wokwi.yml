@@ -65,6 +65,7 @@ jobs:
         if: steps.token.outputs.present == 'true'
         uses: wokwi/wokwi-ci-action@11ddc3fe66a14fcd46683fb21ae5c77657ad4606 # v1.2.0
         with:
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
           path: firmware/esphome
           timeout: 60000
           scenario: scenarios/boot.test.yaml
