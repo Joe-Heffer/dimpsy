@@ -10,7 +10,31 @@ name: Website
 on:
   push:
     branches: [main]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      # Files that docs/ pulls in with include-markdown.
+      - "CHANGELOG.md"
+      - "CONTRIBUTING.md"
+      - "THIRD_PARTY.md"
+      - "enclosure/README.md"
+      - "firmware/README.md"
+      - "hardware/README.md"
+      - ".github/workflows/pages.yml"
   pull_request:
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      # Files that docs/ pulls in with include-markdown.
+      - "CHANGELOG.md"
+      - "CONTRIBUTING.md"
+      - "THIRD_PARTY.md"
+      - "enclosure/README.md"
+      - "firmware/README.md"
+      - "hardware/README.md"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions: {}

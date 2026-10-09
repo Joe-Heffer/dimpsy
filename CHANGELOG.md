@@ -34,6 +34,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+* The website and Wokwi workflows run only when files they depend on change.
 * Decision 0004 now records the options it did not choose (WLED and ESPHome with Home Assistant), that no Home Assistant is needed, and the conditions still to check.
 * Firmware platform is now ESPHome (decision 0004). `firmware/esphome/` holds `dimpsy.yaml` and `secrets.yaml.example` in place of the PlatformIO project, and CI validates and builds the configuration with ESPHome.
 * GitHub Actions are pinned to commit SHAs, checkouts no longer persist credentials, Release Please permissions are set per job, and Dependabot waits seven days before proposing new releases.
