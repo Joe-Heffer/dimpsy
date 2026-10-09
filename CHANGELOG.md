@@ -27,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * CI job that validates ESPHome configs in `firmware/esphome/` with `esphome config`. It skips when none exist.
 * “Works without a network” design principle: the lamp works offline from its controls by default, and any smart home link is optional.
 * `firmware/core/brightness.h` with the candidate perceptual brightness curves (exponential, CIE 1931 lightness and gamma), native unit tests, and a CI job that runs them and charts each curve in the job summary.
+* Browser flashing with ESP Web Tools: a “Flash from your browser” page on the website, a password-free `firmware/esphome/dimpsy-web.yaml` build with Wi-Fi setup over Improv Serial, and a website workflow step that publishes the binary and manifest.
 * Wokwi simulation project in `firmware/esphome/` and a CI workflow that builds the firmware and runs its scenarios when `WOKWI_CLI_TOKEN` is set.
 * zizmor security checks for GitHub Actions workflows, and a codespell spelling check, in the Lint workflow.
 * Project website built with Material for MkDocs from `docs/` and published to GitHub Pages, with home, roadmap, licensing and developer tools pages, including how to run the Wokwi simulation.

@@ -39,6 +39,10 @@ The [Wokwi simulation workflow](https://github.com/Joe-Heffer/dimpsy/actions/wor
 
 The [curve explorer](tools/curves.md) runs the firmware’s brightness curves in your browser. Change the curve, range, gamma, dawn length and PWM resolution, then play the dawn on screen. Every run of the [CI workflow](https://github.com/Joe-Heffer/dimpsy/actions/workflows/ci.yml) also charts the default curves in the summary of its “Firmware core tests” job.
 
+## Flash from the browser
+
+The [flash page](flash.md) installs the prototype firmware over USB with [ESP Web Tools](https://esphome.github.io/esp-web-tools/). It uses `firmware/esphome/dimpsy-web.yaml`, which is `dimpsy.yaml` without Wi-Fi passwords or over-the-air updates. The website workflow builds it on `main` and publishes `dimpsy.factory.bin` beside `docs/firmware/manifest.json`. Locally, `mkdocs serve` shows the page but flashing needs the binary copied to `site/firmware/`.
+
 ## Build locally
 
 ### Firmware

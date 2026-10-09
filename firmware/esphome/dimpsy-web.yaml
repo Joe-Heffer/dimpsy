@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# Build of the Dimpsy prototype firmware for flashing from the website with
+# ESP Web Tools (docs/flash.md). It is dimpsy.yaml with the private settings
+# removed, because the published binary is the same for everyone:
+#
+# * No Wi-Fi network or passwords are built in. The owner enters their network
+#   over USB with Improv Serial, in the browser, after flashing.
+# * The fallback access point has no password, and over-the-air updates are
+#   off because their password would be public. Re-flash over USB to update,
+#   or build dimpsy.yaml with your own secrets.
+#
+# The pages workflow builds this file and publishes the result. Validate it
+# like the other configs: esphome config dimpsy-web.yaml
+
+packages:
+  base: !include dimpsy.yaml
+
+wifi:
+  ssid: !remove
+  password: !remove
+  ap:
+    password: !remove
+
+ota: !remove
+
+improv_serial:

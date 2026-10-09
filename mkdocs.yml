@@ -97,6 +97,7 @@ nav:
   - Prototype:
       - First prototype: prototype.md
       - Firmware: reference/firmware.md
+      - Flash from your browser: flash.md
       - Hardware: reference/hardware.md
       - Hardware practices: hardware-practices.md
       - Enclosure: reference/enclosure.md
