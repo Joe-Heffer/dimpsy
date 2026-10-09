@@ -15,3 +15,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Added
 
 * Initial repository skeleton: firmware, hardware, enclosure and documentation folders, REUSE licensing and CI.
+* Prototype block diagram and line drawing in `docs/prototype.md`.
