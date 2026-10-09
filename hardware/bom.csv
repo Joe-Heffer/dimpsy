@@ -1,6 +1,6 @@
 build,ref,part,description,supplier,supplier_part_no,qty,unit_price_gbp,datasheet_url,held_by,status,notes
 proto-1,A1,ESP32 DevKitC (ESP32-WROOM-32),Controller in the bedside console,XTVTX (Amazon),,1,,,Joe Heffer,held,On breadboard in the bedside console. Chosen in decision 0007. Runs ESPHome (decision 0004)
-proto-1,L1,IKEA Fado lamp,Lamp body and globe,IKEA,,1,,,,candidate,Tokabo still an alternative. Bulb holder and original flex removed
+proto-1,L1,IKEA Fado lamp,Lamp body and globe,IKEA,,1,,,,candidate,Chosen in decision 0005. Bulb holder and original flex removed
 proto-1,D1,SK6812 RGBW LED strip (5 V),LED candidate A,,,1,,,,candidate,Own connector type
 proto-1,D2,Warm white LED strip (12 V),LED candidate B,,,1,,,,candidate,Own connector type. Driven by a logic-level MOSFET
 proto-1,D3,Red LED strip (12 V),LED candidate B,,,1,,,,candidate,Own connector type. Driven by a logic-level MOSFET
