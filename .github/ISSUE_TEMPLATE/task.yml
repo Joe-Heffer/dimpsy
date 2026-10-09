@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: Task
+description: A piece of work for the project board
+labels: ["task"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Firmware
+        - Hardware
+        - Enclosure
+        - Documentation
+        - Research
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs doing
+      description: Include what “done” looks like.
+    validations:
+      required: true

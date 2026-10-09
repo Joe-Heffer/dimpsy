@@ -1,0 +1,20 @@
+item,quantity,purpose,supplier,link,price_gbp,status
+ESP32 DevKit,1,Controller in the bedside console,,,,To source
+Breadboard,1,Holds the ESP32 and control wiring,,,,To source
+Foam-board box,1,Bedside console enclosure,,,,To make
+Rotary knob control,2,Tactile controls,,,,To source
+Toggle switch,1,Tactile control,,,,To source
+Snooze push button,1,Tactile control,,,,To source
+60 mm slider,1,Alternative warmth control,,,,Optional
+Three-position mode switch,1,Mode selection,,,,Optional
+IKEA Fado lamp,1,Lamp body (see decision 0005),,,,To source
+Aluminium tube,1,Core for winding the LED strip,,,,To source
+SK6812 RGBW LED strip (5 V),,LED candidate A (see decision 0006),,,,To source
+Warm white LED strip (12 V),,LED candidate B (see decision 0006),,,,To source
+Red LED strip (12 V),,LED candidate B (see decision 0006),,,,To source
+Logic-level MOSFET,,Drives the 12 V strips for candidate B,,,,To source
+5 V 4 A power adapter,1,Supply for candidate A,,,,To source
+12 V power supply,1,Supply for candidate B,,,,To source
+Screw terminal and connectors,,Separate connector type per LED candidate,,,,To source
+TSL2591 light sensor,1,Pillow light logger,,,,To source
+ESP32 (second),1,Pillow light logger,,,,To source

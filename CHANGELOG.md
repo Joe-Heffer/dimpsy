@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 * Initial repository skeleton: firmware, hardware, enclosure and documentation folders, REUSE licensing and CI.
 * Prototype block diagram and line drawing in `docs/prototype.md`.
+* Decision records in `docs/decisions/`, one file per decision, with a template and index.
+* Prototype parts list in `hardware/prototype-parts.csv`.
+* Pull request template and issue templates for tasks and decisions.
+* Working-together and large-file guidance in `CONTRIBUTING.md`.
 * Hardware organisation guidance in `docs/hardware-practices.md` and a prototype bill of materials template in `hardware/bom.csv`.
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
 
