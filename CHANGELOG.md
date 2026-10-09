@@ -37,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+* CI runs the firmware build, core tests and ESPHome validation only when firmware files change, so documentation-only changes skip them.
 * The “Mains and low voltage” section of `docs/hardware-practices.md` is now “Power and safety”. It no longer allows mains work, in line with decision 0003.
 * Decision 0003 now records the power budget, the options considered (including USB-C Power Delivery for 12 V LEDs) and safety practices. Its outcome, USB-C only, is unchanged.
 * Licences are now permissive (decision 0002): MIT for firmware and other code, CERN-OHL-P-2.0 for hardware and CC-BY-4.0 for the enclosure and documentation. Firmware binaries built with ESPHome are GPL-3.0 as a whole because they contain the ESPHome runtime.
