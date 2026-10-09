@@ -45,5 +45,8 @@ desktop.ini
 *.swo
 *~
 
+# Website build output
+/site/
+
 # Wokwi simulator output
 wokwi-serial.log

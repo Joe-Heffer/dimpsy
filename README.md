@@ -12,6 +12,8 @@ Its defaults are sensory-friendly and suitable for autistic adults, but it is a 
 
 **Status: early prototype.** Nothing here is ready to build yet.
 
+Website and documentation: <https://joe-heffer.github.io/dimpsy/>
+
 ## Safety
 
 Dimpsy is designed to be powered by USB-C only. It must never be connected to mains voltage, and no part of the design should be adapted to run from mains.

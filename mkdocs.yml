@@ -1,0 +1,117 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# Website built with Material for MkDocs and published to GitHub Pages by
+# .github/workflows/pages.yml. Preview locally with:
+#
+#   pip install -r requirements-docs.txt
+#   mkdocs serve
+
+site_name: Dimpsy
+site_description: An open source bedside sleep light with a gentle sunrise alarm and dawn and dusk modes.
+site_author: Joe Heffer
+site_url: https://joe-heffer.github.io/dimpsy/
+repo_url: https://github.com/Joe-Heffer/dimpsy
+repo_name: Joe-Heffer/dimpsy
+edit_uri: edit/main/docs/
+copyright: Text CC-BY-SA-4.0, firmware GPL-3.0-or-later, hardware CERN-OHL-S-2.0
+
+docs_dir: docs
+exclude_docs: |
+  hooks/
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/weather-sunset-up
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - content.action.edit
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+
+extra_css:
+  - assets/site.css
+
+plugins:
+  - search:
+      lang: en
+  - include-markdown
+
+hooks:
+  - docs/hooks/links.py
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+nav:
+  - Home: index.md
+  - About:
+      - Design principles: design-principles.md
+      - Requirements: requirements.md
+      - Roadmap: roadmap.md
+      - Licensing: licensing.md
+  - Prototype:
+      - First prototype: prototype.md
+      - Firmware: reference/firmware.md
+      - Hardware: reference/hardware.md
+      - Hardware practices: hardware-practices.md
+      - Enclosure: reference/enclosure.md
+  - Decisions:
+      - decisions/README.md
+      - 0001 Record decisions: decisions/0001-record-decisions.md
+      - 0002 Licensing: decisions/0002-licensing.md
+      - 0003 USB-C power only: decisions/0003-usb-c-power-only.md
+      - 0004 Firmware platform: decisions/0004-prototype-firmware-platform.md
+      - 0005 Lamp body: decisions/0005-lamp-body.md
+      - 0006 LED candidate: decisions/0006-led-candidate.md
+      - 0007 Microcontroller board: decisions/0007-microcontroller-board.md
+      - Decision template: decisions/template.md
+  - Developers:
+      - Developer tools: developers.md
+      - Curve explorer: tools/curves.md
+      - Contributing: contributing.md
+      - Changelog: changelog.md
