@@ -35,7 +35,7 @@ The supply is a standard USB-C charger. Where an LED option needs more than 5 V,
 
 The LED choice has to fit within what USB-C can supply. Size the supply to at least 1.25 times the greatest LED draw, which is the strip’s power in watts divided by its voltage.
 
-Safety practices for any build:
+Safety practices for any build (the [safety page](../safety.md) has the full list and what to monitor):
 
 * Fuse the supply input (an inline 3 A fuse is cheap), and use wire rated above the fuse current.
 * Check that nothing gets above about 50 to 60 °C after an hour at full output. Mount the transistors that switch the LEDs (MOSFETs) and the strip on something that sheds heat.

@@ -33,9 +33,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * zizmor security checks for GitHub Actions workflows, and a codespell spelling check, in the Lint workflow.
 * Project website built with Material for MkDocs from `docs/` and published to GitHub Pages, with home, roadmap, licensing and developer tools pages, including how to run the Wokwi simulation.
 * Dawn curve explorer on the website: a browser port of `firmware/core/brightness.h` with a CI check that it matches the C++ curves.
+* Safety page (`docs/safety.md`) on the website, covering precautions for power, heat, light, firmware failures and physical placement, and what to monitor to catch problems early. Linked from the README, home page, hardware practices, requirements and decision 0003.
 
 ### Changed
 
+* The “Mains and low voltage” section of `docs/hardware-practices.md` is now “Power and safety”. It no longer allows mains work, in line with decision 0003.
 * Decision 0003 now records the power budget, the options considered (including USB-C Power Delivery for 12 V LEDs) and safety practices. Its outcome, USB-C only, is unchanged.
 * Licences are now permissive (decision 0009, superseding 0002): MIT for firmware and other code, CERN-OHL-P-2.0 for hardware and CC-BY-4.0 for the enclosure and documentation. Firmware binaries built with ESPHome are GPL-3.0 as a whole because they contain the ESPHome runtime.
 * The website and Wokwi workflows run only when files they depend on change.

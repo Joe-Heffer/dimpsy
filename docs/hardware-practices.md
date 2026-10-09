@@ -17,12 +17,13 @@ Practices for keeping the physical parts of the project tidy, traceable and easy
 * Keep datasheets and pinouts in `hardware/datasheets/` where the licence allows redistribution. Otherwise link to them from the BOM.
 * If the two of you hold parts in different places, record in the BOM who holds what, to avoid duplicate orders.
 
-## Mains and low voltage
+## Power and safety
 
-* Keep the mains side physically and conceptually separate from the low-voltage control electronics.
-* Prefer a certified, off-the-shelf power supply to any mains wiring of our own. The prototype already keeps the supply outside both boxes.
-* Before modifying the IKEA lamp, note in the repository how it is wired and powered. Keep the original parts so the lamp can be restored.
-* Only someone competent to do so should work on anything that touches mains, with the lamp unplugged.
+The full precautions and monitoring checks are on the [safety page](safety.md). In short:
+
+* Dimpsy is powered by USB-C only ([decision 0003](decisions/0003-usb-c-power-only.md)). No part of the build connects to mains.
+* Use a certified, off-the-shelf power supply. The prototype keeps the supply outside both boxes.
+* Before modifying the IKEA lamp, note in the repository how it was wired. Remove the bulb holder and mains flex, never reconnect them to the modified lamp, and keep them so the lamp can be restored.
 * Give each LED candidate its own connector type so the wrong supply cannot be connected (as described in the prototype notes).
 
 ## Prototype structure

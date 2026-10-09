@@ -26,7 +26,7 @@ Its defaults are sensory-friendly and suitable for autistic adults, but it is a 
     Nothing here is ready to build yet. The design, parts and firmware will change.
 
 !!! danger "USB-C power only"
-    Dimpsy is designed to be powered by USB-C only. It must never be connected to mains voltage, and no part of the design should be adapted to run from mains. See [decision 0003](decisions/0003-usb-c-power-only.md).
+    Dimpsy is designed to be powered by USB-C only. It must never be connected to mains voltage, and no part of the design should be adapted to run from mains. See [safety](safety.md) for the precautions and what to monitor, and [decision 0003](decisions/0003-usb-c-power-only.md) for the reasoning.
 
 ## What it does
 
@@ -46,6 +46,7 @@ The first prototype is a bench and bedside test rig: an [ESP32 DevKitC](decision
 ## Explore
 
 * [First prototype](prototype.md): layout, block diagram and open questions.
+* [Safety](safety.md): precautions for building and running the lamp, and what to monitor.
 * [Decisions](decisions/README.md): what was chosen, what else was considered and why.
 * [Developer tools](developers.md): Wokwi simulation, build commands and CI.
 * [Dawn curve explorer](tools/curves.md): compare the candidate brightness curves in your browser.

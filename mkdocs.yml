@@ -96,6 +96,7 @@ nav:
       - Licensing: licensing.md
   - Prototype:
       - First prototype: prototype.md
+      - Safety: safety.md
       - Firmware: reference/firmware.md
       - Flash from your browser: flash.md
       - Hardware: reference/hardware.md
