@@ -16,7 +16,7 @@ The first prototype is a bench and bedside test rig. Its purpose is to choose an
 * **Lamp.** An IKEA Fado with the bulb holder and original flex removed. An LED strip is wound round a short aluminium tube standing in the base, facing out at the globe.
 * **LED candidates.** Candidate A is an SK6812 RGBW strip (5 V). Candidate B is a pair of 12 V strips, warm white and red, driven by logic-level MOSFETs. Only one is fitted at a time, and each has its own connector type so the wrong supply cannot be connected.
 * **Power.** The supply sits outside both boxes. Strip current runs from a screw terminal straight to the lamp and does not pass through the breadboard.
-* **Test tools.** A pillow light logger (TSL2591 and a second ESP32) records light levels over Wi-Fi. Settings and schedules are reached through the ESPHome web page.
+* **Test tools.** A pillow light logger (TSL2591 and a second ESP32) records light levels over Wi-Fi. Settings and schedules are reached through the ESPHome web page, which is optional: the lamp works without Wi-Fi or any smart home system.
 
 ## Line drawing
 
@@ -29,5 +29,6 @@ The drawing is not to scale. The 60 mm slider (an alternative warmth control) an
 * The README states that Dimpsy will be powered by USB-C only. Candidate B needs a 12 V supply, and candidate A is planned with a separate 5 V 4 A adapter. Decide whether these are acceptable for the bench prototype only, or whether candidate B should be dropped or run from USB-C Power Delivery. See [decision 0006](decisions/0006-led-candidate.md).
 * Fado or Tokabo: these drawings assume the Fado. See [decision 0005](decisions/0005-lamp-body.md).
 * Moving from ESPHome to custom firmware later: see [decision 0004](decisions/0004-prototype-firmware-platform.md).
+* Whether ESPHome supports the DS3231, high-resolution LEDC PWM and the SK6812 strip ([issue #42](https://github.com/Joe-Heffer/dimpsy/issues/42)), and whether the lamp works offline from its controls alone ([issue #44](https://github.com/Joe-Heffer/dimpsy/issues/44)).
 
 The parts for this prototype are listed in [hardware/prototype-parts.csv](../hardware/prototype-parts.csv).
