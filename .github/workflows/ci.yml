@@ -38,7 +38,7 @@ jobs:
             ~/.platformio/packages
             ~/.platformio/platforms
           key: ${{ runner.os }}-pio-${{ hashFiles('firmware/platformio.ini') }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Install PlatformIO
@@ -59,7 +59,7 @@ jobs:
             ~/.platformio/packages
             ~/.platformio/platforms
           key: ${{ runner.os }}-pio-${{ hashFiles('firmware/platformio.ini') }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Install PlatformIO
