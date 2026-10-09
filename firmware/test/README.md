@@ -16,4 +16,4 @@ pio test
 
 Tests that do not need the hardware can run on the host by adding a `native` environment to `platformio.ini`.
 
-See https://docs.platformio.org/page/advanced/unit-testing/index.html for details.
+See <https://docs.platformio.org/page/advanced/unit-testing/index.html> for details.
