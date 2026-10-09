@@ -29,7 +29,7 @@ The project follows the [REUSE specification](https://reuse.software). Every new
 
   ```sh
   pip install reuse
-  reuse annotate --copyright "Your Name" --year 2026 --license GPL-3.0-or-later firmware/src/example.cpp
+  reuse annotate --copyright "Your Name" --year 2026 --license GPL-3.0-or-later firmware/example.yaml
   ```
 
 * Files that cannot hold comments, such as KiCad, CAD, STL and image files, are covered by folder rules in `REUSE.toml`. Add a new entry if a file needs a different licence or copyright holder.
