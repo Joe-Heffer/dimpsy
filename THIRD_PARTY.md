@@ -12,7 +12,7 @@ Before reusing anything, verify the licence from the project’s own licence fil
 
 | Project | URL | Licence | What we might reuse | Status |
 | --- | --- | --- | --- | --- |
-| GlowLight | https://github.com/Friedjof/GlowLight | To verify (believed GPL-3.0) | To be decided | Not yet reviewed |
-| kid-alarm-light | https://github.com/EtHeO18/kid-alarm-light | To verify (unknown) | To be decided | Not yet reviewed |
-| wakeup-light-esp8266 | https://github.com/edusteinhorst/wakeup-light-esp8266 | To verify (believed MIT) | To be decided | Not yet reviewed |
-| Led’o’clock | https://github.com/denouche/led-o-clock | To verify (believed non-commercial, incompatible with GPL) | Ideas only | Do not copy code or files |
+| GlowLight | <https://github.com/Friedjof/GlowLight> | To verify (believed GPL-3.0) | To be decided | Not yet reviewed |
+| kid-alarm-light | <https://github.com/EtHeO18/kid-alarm-light> | To verify (unknown) | To be decided | Not yet reviewed |
+| wakeup-light-esp8266 | <https://github.com/edusteinhorst/wakeup-light-esp8266> | To verify (believed MIT) | To be decided | Not yet reviewed |
+| Led’o’clock | <https://github.com/denouche/led-o-clock> | To verify (believed non-commercial, incompatible with GPL) | Ideas only | Do not copy code or files |
