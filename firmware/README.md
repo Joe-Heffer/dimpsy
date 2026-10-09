@@ -10,8 +10,8 @@ The Dimpsy prototype runs [ESPHome](https://esphome.io) on an ESP32 DevKitC. The
 
 ## Files
 
-* `dimpsy.yaml`: the ESPHome configuration.
-* `secrets.example.yaml`: a template for `secrets.yaml`, which holds Wi-Fi and update passwords and is not committed.
+* `esphome/dimpsy.yaml`: the ESPHome configuration.
+* `esphome/secrets.yaml.example`: a template for `secrets.yaml`, which holds Wi-Fi and update passwords and is not committed.
 
 ## Build and flash
 
@@ -19,12 +19,12 @@ ESPHome needs Python 3.
 
 ```sh
 pip install esphome
-cp secrets.example.yaml secrets.yaml   # then edit secrets.yaml
+cp secrets.yaml.example secrets.yaml   # then edit secrets.yaml
 esphome config dimpsy.yaml             # validate
 esphome run dimpsy.yaml                # compile, flash and show logs
 ```
 
-Run these from the `firmware/` folder.
+Run these from the `firmware/esphome/` folder.
 
 ## Licensing
 

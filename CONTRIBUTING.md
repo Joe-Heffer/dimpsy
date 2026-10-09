@@ -60,4 +60,6 @@ The project follows the [REUSE specification](https://reuse.software). Every new
 
 * Write prose in British English, in Markdown, using `*` for bullet lists.
 * Follow `.editorconfig` for whitespace and line endings.
+* Pin every GitHub Action to a full commit SHA, with the release tag in a trailing comment. Dependabot keeps both up to date. CI runs [zizmor](https://docs.zizmor.sh) to check this, and `zizmor .` runs the same check locally.
+* CI runs codespell on all files. Add genuine exceptions to `.codespellrc`.
 * Record notable changes in [CHANGELOG.md](CHANGELOG.md) under “Unreleased”.

@@ -10,7 +10,7 @@
 # provisional pin map, and docs/decisions/0004-prototype-firmware-platform.md
 # for the choice of ESPHome. The board for the finished lamp is not yet decided.
 #
-# Copy secrets.example.yaml to secrets.yaml and fill it in before building.
+# Copy secrets.yaml.example to secrets.yaml and fill it in before building.
 
 esphome:
   name: dimpsy

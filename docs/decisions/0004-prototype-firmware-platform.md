@@ -38,8 +38,8 @@ The design principles still require the lamp to work fully without a network. Of
 
 ## Consequences
 
-* `firmware/platformio.ini` and the `src`, `include`, `lib` and `test` folders are removed. `firmware/dimpsy.yaml` and `firmware/secrets.example.yaml` replace them.
-* CI validates and builds `firmware/dimpsy.yaml` with ESPHome in place of the PlatformIO build and `pio check` jobs.
+* `firmware/platformio.ini` and the `src`, `include`, `lib` and `test` folders are removed. `firmware/esphome/dimpsy.yaml` and `firmware/esphome/secrets.yaml.example` replace them.
+* CI validates and builds `firmware/esphome/dimpsy.yaml` with ESPHome in place of the PlatformIO build and `pio check` jobs.
 * The release workflow no longer attaches a firmware binary. A binary built in CI would carry the placeholder Wi-Fi and update passwords, so each builder compiles their own with their own `secrets.yaml`.
 * The `esp32dev` board in decision 0007 is unchanged. Only its note about `platformio.ini` no longer applies.
 * The dawn curve, controls and schedule are still to be written as ESPHome components and configuration.

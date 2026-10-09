@@ -21,7 +21,7 @@ Run both before committing. CI runs the same checks.
 
 ```sh
 reuse lint
-cd firmware && cp secrets.example.yaml secrets.yaml && esphome config dimpsy.yaml
+cd firmware/esphome && cp secrets.yaml.example secrets.yaml && esphome config dimpsy.yaml
 ```
 
 ## Rules
@@ -29,8 +29,8 @@ cd firmware && cp secrets.example.yaml secrets.yaml && esphome config dimpsy.yam
 * Dimpsy is USB-C powered only. Never add or suggest anything that connects to mains voltage.
 * Every new file needs an SPDX copyright and licence header matching its folder (`reuse annotate`). Files that cannot hold comments are covered by `REUSE.toml`.
 * Do not copy code or files from Led’o’clock. Record any other third-party material in [THIRD_PARTY.md](THIRD_PARTY.md) and keep its notices intact.
-* The board in `firmware/dimpsy.yaml` follows [decision 0007](docs/decisions/0007-microcontroller-board.md) for the first prototype only. The board for the finished lamp is not decided.
-* Never commit `firmware/secrets.yaml`. Use `firmware/secrets.example.yaml` for placeholders.
+* The board in `firmware/esphome/dimpsy.yaml` follows [decision 0007](docs/decisions/0007-microcontroller-board.md) for the first prototype only. The board for the finished lamp is not decided.
+* Never commit `firmware/esphome/secrets.yaml`. Use `firmware/esphome/secrets.yaml.example` for placeholders.
 * Write prose in British English, in Markdown, using `*` for bullet lists.
 * Follow `.editorconfig` (2-space indent, 4 for C/C++, INI and TOML).
 * Record notable changes in [CHANGELOG.md](CHANGELOG.md) under “Unreleased”.

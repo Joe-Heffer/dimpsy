@@ -4,7 +4,7 @@
 
 # ESPHome build output and secrets
 .esphome/
-firmware/secrets.yaml
+firmware/esphome/secrets.yaml
 
 # PlatformIO (used internally by ESPHome)
 .pio/
