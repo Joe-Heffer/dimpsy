@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: GPL-3.0-or-later
+SPDX-License-Identifier: MIT
 -->
 
 # Firmware
@@ -53,4 +53,4 @@ CI runs the tests and adds the curve charts and a table of PWM steps to the job 
 
 ## Licensing
 
-The configuration is GPL-3.0-or-later like the rest of `firmware/`. ESPHome itself is a separate project: its Python tooling is MIT-licensed and its C++ runtime, which is built into the firmware, is GPL-3.0-or-later. Nothing from ESPHome is copied into this repository.
+The configuration and `firmware/core/` are MIT like the rest of `firmware/`. ESPHome itself is a separate project: its Python tooling is MIT-licensed and its C++ runtime is GPL-3.0. Nothing from ESPHome is copied into this repository, but the runtime is built into every firmware binary, so a distributed binary is GPL-3.0 as a whole. An ESPHome custom component that includes ESPHome headers must be GPL-3.0-or-later. See [decision 0009](../docs/decisions/0009-permissive-licences.md).

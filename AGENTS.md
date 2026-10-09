@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Agent guidance
@@ -10,10 +10,10 @@ Dimpsy is an open source bedside sleep light (early prototype). See [README.md](
 
 ## Layout
 
-* `firmware/`: ESPHome configuration for the ESP32 DevKitC, and portable C++ in `firmware/core/` (GPL-3.0-or-later)
-* `hardware/`: KiCad files and `bom.csv` (CERN-OHL-S-2.0)
-* `enclosure/`: CAD and STL files (CC-BY-SA-4.0)
-* `docs/`: design principles, requirements, prototype notes and the website source, built by `mkdocs.yml` (CC-BY-SA-4.0)
+* `firmware/`: ESPHome configuration for the ESP32 DevKitC, and portable C++ in `firmware/core/` (MIT)
+* `hardware/`: KiCad files and `bom.csv` (CERN-OHL-P-2.0)
+* `enclosure/`: CAD and STL files (CC-BY-4.0)
+* `docs/`: design principles, requirements, prototype notes and the website source, built by `mkdocs.yml` (CC-BY-4.0; scripts and stylesheets MIT)
 
 ## Checks
 
@@ -31,6 +31,7 @@ For changes to `docs/`, `mkdocs.yml` or the website, also run `mkdocs build --st
 
 * Dimpsy is USB-C powered only. Never add or suggest anything that connects to mains voltage.
 * Every new file needs an SPDX copyright and licence header matching its folder (`reuse annotate`). Files that cannot hold comments are covered by `REUSE.toml`.
+* Licences follow [decision 0009](docs/decisions/0009-permissive-licences.md): MIT by default. An ESPHome custom component that includes ESPHome headers must be GPL-3.0-or-later.
 * Do not copy code or files from Led’o’clock. Record any other third-party material in [THIRD_PARTY.md](THIRD_PARTY.md) and keep its notices intact.
 * The board in `firmware/esphome/dimpsy.yaml` follows [decision 0007](docs/decisions/0007-microcontroller-board.md) for the first prototype only. The board for the finished lamp is not decided.
 * Keep `firmware/core/` free of ESPHome and Arduino code, so it builds with the system compiler.

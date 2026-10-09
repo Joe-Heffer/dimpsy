@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2026 Joe Heffer
 //
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-License-Identifier: MIT
 
 // Browser port of firmware/core/brightness.h, for the curve explorer.
 //

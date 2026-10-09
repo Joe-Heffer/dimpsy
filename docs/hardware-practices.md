@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Organising hardware materials and components
@@ -48,5 +48,5 @@ Practices for keeping the physical parts of the project tidy, traceable and easy
 
 ## Open source
 
-* Hardware files are licensed under CERN-OHL-S-2.0 and enclosure files under CC-BY-SA-4.0. See [LICENSE.md](../LICENSE.md).
+* Hardware files are licensed under CERN-OHL-P-2.0 and enclosure files under CC-BY-4.0. See [LICENSE.md](../LICENSE.md).
 * Before designing a part, check for existing open source sunrise alarm and LED controller designs. Record anything reused in [THIRD_PARTY.md](../THIRD_PARTY.md), with its source URL and verified licence.

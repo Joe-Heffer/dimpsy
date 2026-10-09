@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Dimpsy (Sleep Light)
@@ -37,9 +37,9 @@ Dimpsy is designed to be powered by USB-C only. It must never be connected to ma
 
 The project follows the [REUSE specification](https://reuse.software), so every file states its copyright and licence.
 
-* Firmware: GPL-3.0-or-later
-* Hardware: CERN-OHL-S-2.0
-* Enclosure and documentation: CC-BY-SA-4.0
+* Firmware and other code: MIT
+* Hardware: CERN-OHL-P-2.0
+* Enclosure and documentation: CC-BY-4.0
 * Small configuration files: CC0-1.0
 
 See [LICENSE.md](LICENSE.md) for details and [THIRD_PARTY.md](THIRD_PARTY.md) for upstream projects we may draw on.

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <!-- SPDX-FileCopyrightText: 2026 Joe Heffer -->
-  <!-- SPDX-License-Identifier: CC-BY-SA-4.0 -->
+  <!-- SPDX-License-Identifier: CC-BY-4.0 -->
   <circle cx="16" cy="18" r="11" fill="#ffb74d"/>
   <circle cx="16" cy="18" r="7" fill="#fff3e0"/>
   <rect x="11" y="28" width="10" height="3" rx="1.5" fill="#6d4c41"/>

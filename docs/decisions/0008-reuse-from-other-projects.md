@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # 0008: What to reuse from other projects
@@ -14,11 +14,11 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 [THIRD_PARTY.md](../../THIRD_PARTY.md) listed four sunrise and night light projects that Dimpsy might draw on, with unverified licences ([issue #15](https://github.com/Joe-Heffer/dimpsy/issues/15)). A fifth, HA-Sunrise-Lamp-Alarm, is the closest match to the prototype and was missing.
 
-Each folder has its own licence ([decision 0002](0002-licensing.md)), so a project can be usable in one folder and not in another:
+Each folder has its own licence ([decision 0009](0009-permissive-licences.md), which replaced [decision 0002](0002-licensing.md)), so a project can be usable in one folder and not in another:
 
-* `firmware/`: GPL-3.0-or-later. Accepts MIT code. Accepts GPL-3.0-only or LGPL-3.0-only code only if those files keep their own licence, which makes the built firmware GPL-3.0-only in practice.
-* `hardware/`: CERN-OHL-S-2.0. Accepts permissively licensed designs.
-* `enclosure/` and `docs/`: CC-BY-SA-4.0. Accepts MIT and CC-BY-4.0 material. Does not accept GPL or LGPL material, because CC-BY-SA-4.0 is compatible with GPL-3.0 in one direction only.
+* `firmware/`: MIT. Accepts MIT, BSD and similar permissive code. GPL or LGPL code could only go in as separate files under their own licence, which would make the built firmware GPL in any case.
+* `hardware/`: CERN-OHL-P-2.0. Accepts permissively licensed designs.
+* `enclosure/` and `docs/`: CC-BY-4.0. Accepts MIT, CC0 and CC-BY-4.0 material. Does not accept CC-BY-SA, GPL or LGPL material.
 
 Each licence below was checked on 2026-10-09 from the project’s own licence file or README, at the commit noted.
 

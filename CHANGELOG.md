@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Changelog
@@ -36,6 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+* Licences are now permissive (decision 0009, superseding 0002): MIT for firmware and other code, CERN-OHL-P-2.0 for hardware and CC-BY-4.0 for the enclosure and documentation. Firmware binaries built with ESPHome are GPL-3.0 as a whole because they contain the ESPHome runtime.
 * Decision 0004 now records the options it did not choose (WLED and ESPHome with Home Assistant), that no Home Assistant is needed, and the conditions still to check.
 * Firmware platform is now ESPHome (decision 0004). `firmware/esphome/` holds `dimpsy.yaml` and `secrets.yaml.example` in place of the PlatformIO project, and CI validates and builds the configuration with ESPHome.
 * GitHub Actions are pinned to commit SHAs, checkouts no longer persist credentials, Release Please permissions are set per job, and Dependabot waits seven days before proposing new releases.

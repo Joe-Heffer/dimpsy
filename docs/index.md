@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Dimpsy
@@ -53,4 +53,4 @@ The first prototype is a bench and bedside test rig: an [ESP32 DevKitC](decision
 
 ## Licence
 
-Dimpsy is open hardware and free software. Firmware is GPL-3.0-or-later, hardware is CERN-OHL-S-2.0, and the enclosure and documentation are CC-BY-SA-4.0. See [licensing](licensing.md).
+Dimpsy is open hardware and free software. Firmware and other code are MIT, hardware is CERN-OHL-P-2.0, and the enclosure and documentation are CC-BY-4.0. See [licensing](licensing.md).

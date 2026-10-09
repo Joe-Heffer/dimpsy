@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Contributing
@@ -12,12 +12,12 @@ Thank you for your interest in Dimpsy. The project is at an early stage, so plea
 
 Contributions are accepted under the same licence as the folder they are made to (inbound = outbound):
 
-* `firmware/`: GPL-3.0-or-later
-* `hardware/`: CERN-OHL-S-2.0
-* `enclosure/` and `docs/`: CC-BY-SA-4.0
+* `firmware/`, and scripts or stylesheets elsewhere: MIT
+* `hardware/`: CERN-OHL-P-2.0
+* `enclosure/` and `docs/`: CC-BY-4.0
 * small configuration files: CC0-1.0
 
-See [LICENSE.md](LICENSE.md) for the full mapping. You keep the copyright in your contribution.
+An ESPHome custom component that includes ESPHome headers is the exception: license it GPL-3.0-or-later, because it is a derived work of the ESPHome runtime. See [LICENSE.md](LICENSE.md) for the full mapping. You keep the copyright in your contribution.
 
 We recommend signing off your commits with `git commit -s`. This adds a `Signed-off-by` line certifying the [Developer Certificate of Origin](https://developercertificate.org/), which states that you have the right to submit the work under the project’s licence.
 
@@ -29,7 +29,7 @@ The project follows the [REUSE specification](https://reuse.software). Every new
 
   ```sh
   pip install reuse
-  reuse annotate --copyright "Your Name" --year 2026 --license GPL-3.0-or-later firmware/example.yaml
+  reuse annotate --copyright "Your Name" --year 2026 --license MIT firmware/example.yaml
   ```
 
 * Files that cannot hold comments, such as KiCad, CAD, STL and image files, are covered by folder rules in `REUSE.toml`. Add a new entry if a file needs a different licence or copyright holder.
@@ -41,7 +41,7 @@ The project follows the [REUSE specification](https://reuse.software). Every new
 * Keep the original copyright and licence notices intact. Do not remove or rewrite them.
 * Add the upstream licence text to `LICENSES/` (`reuse download <SPDX-ID>`) and mark the file with the original copyright holder.
 * Only reuse material whose licence is compatible with the destination folder.
-* Do not copy any code or files from Led’o’clock. Its licence is non-commercial and incompatible with the GPL. It can inform ideas only.
+* Do not copy any code or files from Led’o’clock. Its licence is non-commercial and incompatible with the project’s licences. It can inform ideas only.
 
 ## Working together
 

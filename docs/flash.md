@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2026 Joe Heffer
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Flash from your browser
@@ -48,4 +48,4 @@ The lamp works without a network, so none of this affects its local behaviour (s
 
 ## Where the firmware comes from
 
-The [website workflow](https://github.com/Joe-Heffer/dimpsy/actions/workflows/pages.yml) builds `dimpsy-web.yaml` with ESPHome every time `main` changes and publishes the result with a [manifest](https://github.com/Joe-Heffer/dimpsy/blob/main/docs/firmware/manifest.json) that tells ESP Web Tools what to write. The firmware is GPL-3.0-or-later. ESP Web Tools is Apache-2.0 and loads from [unpkg](https://unpkg.com) when you open this page.
+The [website workflow](https://github.com/Joe-Heffer/dimpsy/actions/workflows/pages.yml) builds `dimpsy-web.yaml` with ESPHome every time `main` changes and publishes the result with a [manifest](https://github.com/Joe-Heffer/dimpsy/blob/main/docs/firmware/manifest.json) that tells ESP Web Tools what to write. The binary is GPL-3.0, because it contains the ESPHome runtime; Dimpsy’s own source is MIT (see [licensing](licensing.md)). ESP Web Tools is Apache-2.0 and loads from [unpkg](https://unpkg.com) when you open this page.
