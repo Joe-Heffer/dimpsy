@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Pull request template and issue templates for tasks and decisions.
 * Working-together and large-file guidance in `CONTRIBUTING.md`.
 * Hardware organisation guidance in `docs/hardware-practices.md` and a prototype bill of materials template in `hardware/bom.csv`.
+* `AGENTS.md` with guidance for AI coding agents.
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
 
 ### Changed
