@@ -23,6 +23,8 @@ Website and documentation: <https://joe-heffer.github.io/dimpsy/>
 
 Dimpsy is designed to be powered by USB-C only. It must never be connected to mains voltage, and no part of the design should be adapted to run from mains.
 
+Read the [safety page](docs/safety.md) before building or powering anything. It covers the precautions for the power supply, heat, light and firmware, and what to monitor to catch problems early.
+
 ## Folder layout
 
 | Folder | Contents |

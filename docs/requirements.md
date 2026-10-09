@@ -24,7 +24,7 @@ To be written.
 
 ## Power and safety
 
-To be written.
+The safety rules are on the [safety page](safety.md) and in [decision 0003](decisions/0003-usb-c-power-only.md). Measurable requirements, such as temperature limits, the maximum current and the state the lamp starts in, are still to be written.
 
 ## Open questions
 
