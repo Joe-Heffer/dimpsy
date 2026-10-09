@@ -11,7 +11,7 @@ Dimpsy uses different licences for different parts of the project. It follows th
 | Website scripts and stylesheet | `docs/tools/*.js`, `docs/assets/site.css` | MIT License | [MIT](LICENSES/MIT.txt) |
 | Small configuration files | `.gitignore`, `.editorconfig`, CI workflows, `REUSE.toml` and similar | Creative Commons Zero v1.0 Universal | [CC0-1.0](LICENSES/CC0-1.0.txt) |
 
-The licences were chosen in [decision 0009](docs/decisions/0009-permissive-licences.md): MIT by default, with permissive equivalents for hardware, CAD and prose.
+The licences were chosen in [decision 0002](docs/decisions/0002-licensing.md): MIT by default, with permissive equivalents for hardware, CAD and prose.
 
 ## ESPHome firmware binaries
 

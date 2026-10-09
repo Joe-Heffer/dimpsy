@@ -14,7 +14,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 [THIRD_PARTY.md](../../THIRD_PARTY.md) listed four sunrise and night light projects that Dimpsy might draw on, with unverified licences ([issue #15](https://github.com/Joe-Heffer/dimpsy/issues/15)). A fifth, HA-Sunrise-Lamp-Alarm, is the closest match to the prototype and was missing.
 
-Each folder has its own licence ([decision 0009](0009-permissive-licences.md), which replaced [decision 0002](0002-licensing.md)), so a project can be usable in one folder and not in another:
+Each folder has its own licence ([decision 0002](0002-licensing.md)), so a project can be usable in one folder and not in another:
 
 * `firmware/`: MIT. Accepts MIT, BSD and similar permissive code. GPL or LGPL code could only go in as separate files under their own licence, which would make the built firmware GPL in any case.
 * `hardware/`: CERN-OHL-P-2.0. Accepts permissively licensed designs.
