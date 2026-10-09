@@ -76,5 +76,7 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: wokwi-serial-log
-          path: firmware/esphome/wokwi-serial.log
+          path: |
+            wokwi-serial.log
+            firmware/esphome/wokwi-serial.log
           if-no-files-found: ignore
