@@ -6,6 +6,9 @@
 .esphome/
 firmware/esphome/secrets.yaml
 
+# Native builds of the firmware core
+firmware/core/build/
+
 # PlatformIO (used internally by ESPHome)
 .pio/
 

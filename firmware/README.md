@@ -12,6 +12,7 @@ The Dimpsy prototype runs [ESPHome](https://esphome.io) on an ESP32 DevKitC. The
 
 * `esphome/dimpsy.yaml`: the ESPHome configuration.
 * `esphome/secrets.yaml.example`: a template for `secrets.yaml`, which holds Wi-Fi and update passwords and is not committed.
+* `core/`: plain C++ for the lamp’s behaviour, with no ESPHome or Arduino code, so it can be tested on a computer. It holds the candidate brightness curves from [#16](https://github.com/Joe-Heffer/dimpsy/issues/16) in `brightness.h`, their unit tests and a tool that prints them.
 
 ## Build and flash
 
@@ -25,6 +26,18 @@ esphome run dimpsy.yaml                # compile, flash and show logs
 ```
 
 Run these from the `firmware/esphome/` folder.
+
+## Core tests and curves
+
+The core needs a C++17 compiler and `make`. Run these from the `firmware/core/` folder:
+
+```sh
+make test      # build and run the unit tests
+make summary   # print the dawn curves as Markdown with Mermaid charts
+make csv       # print the dawn curves as CSV
+```
+
+CI runs the tests and adds the curve charts and a table of PWM steps to the job summary of each run.
 
 ## Licensing
 

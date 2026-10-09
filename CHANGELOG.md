@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * `AGENTS.md` with guidance for AI coding agents.
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
 * CI job that validates ESPHome configs in `firmware/esphome/` with `esphome config`. It skips when none exist.
+* `firmware/core/brightness.h` with the candidate perceptual brightness curves (exponential, CIE 1931 lightness and gamma), native unit tests, and a CI job that runs them and charts each curve in the job summary.
 * zizmor security checks for GitHub Actions workflows, and a codespell spelling check, in the Lint workflow.
 
 ### Changed
