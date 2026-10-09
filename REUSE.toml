@@ -31,7 +31,7 @@ SPDX-FileCopyrightText = "2026 Joe Heffer"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
 [[annotations]]
-path = [".ecrc", "release-please-config.json", ".release-please-manifest.json", "version.txt"]
+path = [".editorconfig-checker.json", "release-please-config.json", ".release-please-manifest.json", "version.txt"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Joe Heffer"
 SPDX-License-Identifier = "CC0-1.0"
