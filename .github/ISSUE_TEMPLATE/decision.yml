@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: Decision to make
+description: A design choice that needs discussing before a decision file is written
+labels: ["decision"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What needs deciding, and why now?
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options
+      description: The options considered, with the main advantage and drawback of each.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        When the choice is made, record it as a file in `docs/decisions/` and link it from this issue.

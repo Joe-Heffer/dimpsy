@@ -10,4 +10,6 @@ The electronics design goes here: KiCad schematics, PCB layout, project-specific
 
 Files in this folder are licensed under the CERN Open Hardware Licence Version 2, Strongly Reciprocal (CERN-OHL-S-2.0). KiCad files cannot carry licence headers, so `REUSE.toml` covers them.
 
-Nothing has been designed yet.
+`prototype-parts.csv` lists the parts for the first bench prototype. Fill in suppliers, links and prices as parts are chosen.
+
+No schematic or PCB has been designed yet.

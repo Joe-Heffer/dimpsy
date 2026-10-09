@@ -26,5 +26,8 @@ The drawing is not to scale. The 60 mm slider (an alternative warmth control) an
 
 ## Open questions
 
-* The README states that Dimpsy will be powered by USB-C only. Candidate B needs a 12 V supply, and candidate A is planned with a separate 5 V 4 A adapter. Decide whether these are acceptable for the bench prototype only, or whether candidate B should be dropped or run from USB-C Power Delivery.
-* Fado or Tokabo: these drawings assume the Fado.
+* The README states that Dimpsy will be powered by USB-C only. Candidate B needs a 12 V supply, and candidate A is planned with a separate 5 V 4 A adapter. Decide whether these are acceptable for the bench prototype only, or whether candidate B should be dropped or run from USB-C Power Delivery. See [decision 0006](decisions/0006-led-candidate.md).
+* Fado or Tokabo: these drawings assume the Fado. See [decision 0005](decisions/0005-lamp-body.md).
+* ESPHome or custom PlatformIO firmware: see [decision 0004](decisions/0004-prototype-firmware-platform.md).
+
+The parts for this prototype are listed in [hardware/prototype-parts.csv](../hardware/prototype-parts.csv).
