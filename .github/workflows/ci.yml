@@ -66,3 +66,37 @@ jobs:
         run: pip install --upgrade platformio
       - name: Check
         run: pio check --project-dir firmware --fail-on-defect=high --fail-on-defect=medium
+
+  esphome:
+    name: Validate ESPHome config
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Find ESPHome configs
+        id: find
+        run: |
+          shopt -s nullglob
+          found=false
+          for f in firmware/esphome/*.yaml; do
+            [ "$(basename "$f")" = "secrets.yaml" ] || found=true
+          done
+          if [ "$found" = false ]; then
+            echo "No ESPHome configs in firmware/esphome; skipping."
+          fi
+          echo "found=$found" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-python@v5
+        if: steps.find.outputs.found == 'true'
+        with:
+          python-version: "3.12"
+      - name: Install ESPHome
+        if: steps.find.outputs.found == 'true'
+        run: pip install --upgrade esphome
+      - name: Validate
+        if: steps.find.outputs.found == 'true'
+        working-directory: firmware/esphome
+        run: |
+          shopt -s nullglob
+          [ -f secrets.yaml ] || cp secrets.yaml.example secrets.yaml
+          for f in *.yaml; do
+            [ "$f" = "secrets.yaml" ] || esphome config "$f"
+          done
