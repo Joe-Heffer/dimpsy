@@ -20,6 +20,7 @@ copyright: Text CC-BY-4.0, code MIT, hardware CERN-OHL-P-2.0
 docs_dir: docs
 exclude_docs: |
   hooks/
+  /README.md
 
 theme:
   name: material
