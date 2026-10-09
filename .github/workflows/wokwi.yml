@@ -7,7 +7,15 @@ name: Wokwi simulation
 on:
   push:
     branches: [main]
+    paths:
+      - "firmware/esphome/**"
+      - "firmware/core/**"
+      - ".github/workflows/wokwi.yml"
   pull_request:
+    paths:
+      - "firmware/esphome/**"
+      - "firmware/core/**"
+      - ".github/workflows/wokwi.yml"
   workflow_dispatch:
 
 permissions:
