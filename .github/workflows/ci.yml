@@ -22,15 +22,19 @@ jobs:
     name: REUSE compliance
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: fsfe/reuse-action@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: fsfe/reuse-action@bb774aa972c2a89ff34781233d275075cbddf542 # v5.0.0
 
   firmware:
     name: Build firmware
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/cache@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |
             ~/.cache/pip
@@ -38,7 +42,7 @@ jobs:
             ~/.platformio/packages
             ~/.platformio/platforms
           key: ${{ runner.os }}-pio-${{ hashFiles('firmware/platformio.ini') }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.12"
       - name: Install PlatformIO
@@ -50,8 +54,10 @@ jobs:
     name: Static analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/cache@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |
             ~/.cache/pip
@@ -59,7 +65,7 @@ jobs:
             ~/.platformio/packages
             ~/.platformio/platforms
           key: ${{ runner.os }}-pio-${{ hashFiles('firmware/platformio.ini') }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.12"
       - name: Install PlatformIO
