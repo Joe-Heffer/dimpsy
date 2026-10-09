@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 # Licensing
 
-Each folder has its own licence, chosen in [decision 0009](decisions/0009-permissive-licences.md). The project follows the [REUSE specification](https://reuse.software), so every file states its copyright and licence, either in a header or in [`REUSE.toml`](https://github.com/Joe-Heffer/dimpsy/blob/main/REUSE.toml).
+Each folder has its own licence, chosen in [decision 0002](decisions/0002-licensing.md). The project follows the [REUSE specification](https://reuse.software), so every file states its copyright and licence, either in a header or in [`REUSE.toml`](https://github.com/Joe-Heffer/dimpsy/blob/main/REUSE.toml).
 
 | Part | Folder | Licence |
 | --- | --- | --- |
