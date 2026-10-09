@@ -1,0 +1,79 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: Wokwi simulation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  simulate:
+    name: Simulate firmware
+    runs-on: ubuntu-latest
+    env:
+      # Repository secret. Not available to pull requests from forks.
+      WOKWI_CLI_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
+    steps:
+      - name: Check for Wokwi token
+        id: token
+        run: |
+          if [ -n "$WOKWI_CLI_TOKEN" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::WOKWI_CLI_TOKEN is not set, so the simulation was skipped."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.token.outputs.present == 'true'
+        with:
+          persist-credentials: false
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        if: steps.token.outputs.present == 'true'
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio
+            ~/.cache/esphome
+          key: ${{ runner.os }}-esphome-${{ hashFiles('firmware/esphome/dimpsy.yaml') }}
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        if: steps.token.outputs.present == 'true'
+        with:
+          python-version: "3.12"
+      - name: Install ESPHome
+        if: steps.token.outputs.present == 'true'
+        run: pip install --upgrade esphome
+      - name: Create placeholder secrets
+        if: steps.token.outputs.present == 'true'
+        working-directory: firmware/esphome
+        run: cp secrets.yaml.example secrets.yaml
+      - name: Build
+        if: steps.token.outputs.present == 'true'
+        working-directory: firmware/esphome
+        run: esphome compile dimpsy.yaml
+      - name: Run scenarios
+        if: steps.token.outputs.present == 'true'
+        uses: wokwi/wokwi-ci-action@11ddc3fe66a14fcd46683fb21ae5c77657ad4606 # v1.2.0
+        with:
+          path: firmware/esphome
+          timeout: 60000
+          scenario: scenarios/boot.test.yaml
+          fail_text: "Guru Meditation Error"
+          serial_log_file: wokwi-serial.log
+      - name: Upload serial log
+        if: always() && steps.token.outputs.present == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: wokwi-serial-log
+          path: firmware/esphome/wokwi-serial.log
+          if-no-files-found: ignore

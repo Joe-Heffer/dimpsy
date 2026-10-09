@@ -44,3 +44,6 @@ desktop.ini
 *.swp
 *.swo
 *~
+
+# Wokwi simulator output
+wokwi-serial.log

@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "author": "Joe Heffer",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp32",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ky-040",
+      "id": "enc1",
+      "top": -40,
+      "left": -300,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ky-040",
+      "id": "enc2",
+      "top": -40,
+      "left": -180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "slider",
+      "top": 150,
+      "left": -300,
+      "attrs": {
+        "travelLength": "30"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "toggle",
+      "top": 150,
+      "left": -180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "snooze",
+      "top": 150,
+      "left": -100,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-ds1307",
+      "id": "rtc",
+      "top": -40,
+      "left": 200,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "enc1:CLK",
+      "esp32:32",
+      "green",
+      []
+    ],
+    [
+      "enc1:DT",
+      "esp32:33",
+      "blue",
+      []
+    ],
+    [
+      "enc1:SW",
+      "esp32:25",
+      "yellow",
+      []
+    ],
+    [
+      "enc1:VCC",
+      "esp32:3V3",
+      "red",
+      []
+    ],
+    [
+      "enc1:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "enc2:CLK",
+      "esp32:26",
+      "green",
+      []
+    ],
+    [
+      "enc2:DT",
+      "esp32:27",
+      "blue",
+      []
+    ],
+    [
+      "enc2:SW",
+      "esp32:14",
+      "yellow",
+      []
+    ],
+    [
+      "enc2:VCC",
+      "esp32:3V3",
+      "red",
+      []
+    ],
+    [
+      "enc2:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "slider:SIG",
+      "esp32:34",
+      "orange",
+      []
+    ],
+    [
+      "slider:VCC",
+      "esp32:3V3",
+      "red",
+      []
+    ],
+    [
+      "slider:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "toggle:2",
+      "esp32:16",
+      "purple",
+      []
+    ],
+    [
+      "toggle:1",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "snooze:1.l",
+      "esp32:17",
+      "purple",
+      []
+    ],
+    [
+      "snooze:2.l",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "rtc:SDA",
+      "esp32:21",
+      "green",
+      []
+    ],
+    [
+      "rtc:SCL",
+      "esp32:22",
+      "blue",
+      []
+    ],
+    [
+      "rtc:5V",
+      "esp32:5V",
+      "red",
+      []
+    ],
+    [
+      "rtc:GND",
+      "esp32:GND.2",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

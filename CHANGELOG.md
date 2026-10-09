@@ -26,6 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Decision 0005: the first prototype uses the IKEA Fado as the lamp body.
 * CI job that validates ESPHome configs in `firmware/esphome/` with `esphome config`. It skips when none exist.
 * `firmware/core/brightness.h` with the candidate perceptual brightness curves (exponential, CIE 1931 lightness and gamma), native unit tests, and a CI job that runs them and charts each curve in the job summary.
+* Wokwi simulation project in `firmware/esphome/` and a CI workflow that builds the firmware and runs its scenarios when `WOKWI_CLI_TOKEN` is set.
 * zizmor security checks for GitHub Actions workflows, and a codespell spelling check, in the Lint workflow.
 
 ### Changed
