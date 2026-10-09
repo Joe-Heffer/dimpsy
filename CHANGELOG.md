@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
 * CI job that validates ESPHome configs in `firmware/esphome/` with `esphome config`. It skips when none exist.
 * “Works without a network” design principle: the lamp works offline from its controls by default, and any smart home link is optional.
+* `firmware/core/brightness.h` with the candidate perceptual brightness curves (exponential, CIE 1931 lightness and gamma), native unit tests, and a CI job that runs them and charts each curve in the job summary.
 * zizmor security checks for GitHub Actions workflows, and a codespell spelling check, in the Lint workflow.
 
 ### Changed

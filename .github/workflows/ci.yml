@@ -53,6 +53,18 @@ jobs:
         working-directory: firmware/esphome
         run: esphome compile dimpsy.yaml
 
+  core-tests:
+    name: Firmware core tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Unit tests
+        run: make -C firmware/core test
+      - name: Curve summary
+        run: make -C firmware/core --no-print-directory -s summary >> "$GITHUB_STEP_SUMMARY"
+
   esphome:
     name: Validate ESPHome config
     runs-on: ubuntu-latest
