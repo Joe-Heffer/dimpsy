@@ -6,6 +6,13 @@ SPDX-License-Identifier: CC-BY-4.0
 
 # Dimpsy (Sleep Light)
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo/dimpsy-logo-dark.svg">
+    <img src="docs/assets/logo/dimpsy-logo.svg" alt="Dimpsy logo: a sun setting below the horizon, above the word dimpsy" width="220">
+  </picture>
+</p>
+
 [![CI](https://github.com/joe-heffer/dimpsy/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/joe-heffer/dimpsy/actions/workflows/ci.yml)
 [![Lint](https://github.com/joe-heffer/dimpsy/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/joe-heffer/dimpsy/actions/workflows/lint.yml)
 [![Website](https://github.com/joe-heffer/dimpsy/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/joe-heffer/dimpsy/actions/workflows/pages.yml)

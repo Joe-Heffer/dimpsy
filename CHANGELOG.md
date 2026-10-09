@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * `AGENTS.md` with guidance for AI coding agents.
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
 * Decision 0005: the first prototype uses the IKEA Fado as the lamp body.
+* Dimpsy logo in `docs/assets/logo/`, shown in the README and on the website, with a matching favicon and site colours.
 * Decision 0008: what to reuse from other projects. `THIRD_PARTY.md` now records verified licences and adds ESPHome and HA-Sunrise-Lamp-Alarm.
 * CI job that validates ESPHome configs in `firmware/esphome/` with `esphome config`. It skips when none exist.
 * “Works without a network” design principle: the lamp works offline from its controls by default, and any smart home link is optional.

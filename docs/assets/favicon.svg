@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- SPDX-FileCopyrightText: 2026 Joe Heffer -->
-  <!-- SPDX-License-Identifier: CC-BY-4.0 -->
-  <circle cx="16" cy="18" r="11" fill="#ffb74d"/>
-  <circle cx="16" cy="18" r="7" fill="#fff3e0"/>
-  <rect x="11" y="28" width="10" height="3" rx="1.5" fill="#6d4c41"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<!-- SPDX-FileCopyrightText: 2026 Joe Heffer -->
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+<rect width="120" height="120" rx="26" fill="#1E1B3A"/>
+<g transform="translate(2.00 -9.00) scale(0.97)"><path d="M20 78A40 40 0 0 1 100 78Z" fill="#4B3F72"/><path d="M30 78A30 30 0 0 1 90 78Z" fill="#D9776B"/><path d="M40 78A20 20 0 0 1 80 78Z" fill="#F2A65A"/><rect x="14" y="84" width="92" height="7" rx="3.5" fill="#F6F1EA"/><rect x="34" y="97" width="52" height="7" rx="3.5" fill="#F6F1EA" opacity="0.45"/></g>
 </svg>

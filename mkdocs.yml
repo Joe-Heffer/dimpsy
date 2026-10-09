@@ -25,21 +25,21 @@ exclude_docs: |
 theme:
   name: material
   language: en
+  logo: assets/logo/dimpsy-mark-dark.svg
   icon:
-    logo: material/weather-sunset-up
     repo: fontawesome/brands/github
   favicon: assets/favicon.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep orange
+      primary: custom
       accent: amber
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep orange
+      primary: custom
       accent: amber
       toggle:
         icon: material/weather-sunny
