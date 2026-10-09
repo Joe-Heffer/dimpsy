@@ -1,0 +1,14 @@
+// SPDX-FileCopyrightText: 2026 Joe Heffer
+//
+// SPDX-License-Identifier: CC0-1.0
+{
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD033": false,
+    "MD041": false,
+    "MD024": { "siblings_only": true },
+    "MD004": { "style": "asterisk" }
+  },
+  "ignores": ["CHANGELOG.md", "LICENSES/**", "LICENSE.md"]
+}
