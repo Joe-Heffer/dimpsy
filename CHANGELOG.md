@@ -44,6 +44,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * GitHub Actions are pinned to commit SHAs, checkouts no longer persist credentials, Release Please permissions are set per job, and Dependabot waits seven days before proposing new releases.
 * Firmware now targets the ESP32 DevKitC (`esp32dev`) in place of the ESP32-C3 placeholder.
 * BOM records the ESP32 DevKitC as held and adds a level shifter for the SK6812 strip.
+* Decision 0006 (still open) now sets out the lighting aims from published research and the supply-voltage trade-offs, and adds tunable-white COB, SK6812 WWA and discrete power LED options.
 
 ### Removed
 
