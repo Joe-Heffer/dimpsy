@@ -110,6 +110,7 @@ nav:
       - 0005 Lamp body: decisions/0005-lamp-body.md
       - 0006 LED candidate: decisions/0006-led-candidate.md
       - 0007 Microcontroller board: decisions/0007-microcontroller-board.md
+      - 0008 Reuse from other projects: decisions/0008-reuse-from-other-projects.md
       - Decision template: decisions/template.md
   - Developers:
       - Developer tools: developers.md

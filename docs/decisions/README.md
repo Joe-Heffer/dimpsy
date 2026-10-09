@@ -34,3 +34,4 @@ Do not edit an accepted decision to change its outcome. Write a new one that sup
 | [0005](0005-lamp-body.md) | Lamp body: IKEA Fado or Tokabo | Accepted |
 | [0006](0006-led-candidate.md) | LED candidate for the prototype | Open |
 | [0007](0007-microcontroller-board.md) | Microcontroller board | Accepted |
+| [0008](0008-reuse-from-other-projects.md) | What to reuse from other projects | Accepted |

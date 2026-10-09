@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * `AGENTS.md` with guidance for AI coding agents.
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
 * Decision 0005: the first prototype uses the IKEA Fado as the lamp body.
+* Decision 0008: what to reuse from other projects. `THIRD_PARTY.md` now records verified licences and adds ESPHome and HA-Sunrise-Lamp-Alarm.
 * CI job that validates ESPHome configs in `firmware/esphome/` with `esphome config`. It skips when none exist.
 * “Works without a network” design principle: the lamp works offline from its controls by default, and any smart home link is optional.
 * `firmware/core/brightness.h` with the candidate perceptual brightness curves (exponential, CIE 1931 lightness and gamma), native unit tests, and a CI job that runs them and charts each curve in the job summary.
