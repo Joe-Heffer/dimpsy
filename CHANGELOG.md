@@ -17,3 +17,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Initial repository skeleton: firmware, hardware, enclosure and documentation folders, REUSE licensing and CI.
 * Prototype block diagram and line drawing in `docs/prototype.md`.
 * Hardware organisation guidance in `docs/hardware-practices.md` and a prototype bill of materials template in `hardware/bom.csv`.
+* Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
+
+### Changed
+
+* Firmware now targets the ESP32 DevKitC (`esp32dev`) in place of the ESP32-C3 placeholder.
+* BOM records the ESP32 DevKitC as held and adds a level shifter for the SK6812 strip.
