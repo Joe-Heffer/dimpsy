@@ -6,9 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # 0005: Lamp body: IKEA Fado or Tokabo
 
-* **Status:** Open
+* **Status:** Accepted
 * **Date:** 2026-10-09
 * **Deciders:** Joe Heffer and collaborator
+* **Issue:** [#13](https://github.com/Joe-Heffer/dimpsy/issues/13)
 
 ## Context
 
@@ -16,13 +17,21 @@ The first prototype uses an existing IKEA lamp as the body so that no custom enc
 
 ## Options
 
-* **IKEA Fado:** the current assumption, with a globe that suits an LED core wound on a short aluminium tube.
-* **IKEA Tokabo:** not yet assessed against the LED and wiring layout.
+* **IKEA Fado:** a globe lamp with a 25 cm diffuser and room inside for an LED core wound on a short aluminium tube. It is the larger of the two.
+* **IKEA Tokabo:** smaller, and not assessed against the LED and wiring layout.
 
 ## Decision
 
-Not yet decided. The prototype proceeds with the Fado.
+`proto-1` uses the **IKEA Fado**.
+
+* It is bigger, so there is more room for the LED core, the cable entry and the screw terminal, which makes it easier to work with while the layout is still changing.
+* The 25 cm diffuser gives the strip candidates in [decision 0006](0006-led-candidate.md) space to blend into an even glow.
+* The block diagram, line drawing, BOM and phase plan already assume it, so nothing needs redrawing.
+
+The Tokabo is dropped from the prototype. Size is not a goal for `proto-1`, and the finished lamp is not tied to either IKEA product. Revisit the lamp body when the enclosure for the finished lamp is designed.
 
 ## Consequences
 
-If the Tokabo is chosen, the block diagram, the line drawing and the LED mounting need redrawing. Add the criteria used to compare them here (diffusion, size, how easily the original parts come out, availability) when the comparison is made.
+* `hardware/bom.csv` no longer lists the Tokabo as an alternative.
+* The open question about the lamp body in `docs/prototype.md` is closed.
+* The Fado is a large lamp for a bedside table. Check the footprint on the bedside table before the first full build.
