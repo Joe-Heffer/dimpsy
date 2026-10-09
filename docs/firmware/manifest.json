@@ -1,0 +1,11 @@
+{
+  "name": "Dimpsy prototype",
+  "version": "unreleased",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [{ "path": "dimpsy.factory.bin", "offset": 0 }]
+    }
+  ]
+}

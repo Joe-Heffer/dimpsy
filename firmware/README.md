@@ -11,6 +11,7 @@ The Dimpsy prototype runs [ESPHome](https://esphome.io) on an ESP32 DevKitC. The
 ## Files
 
 * `esphome/dimpsy.yaml`: the ESPHome configuration.
+* `esphome/dimpsy-web.yaml`: the same configuration without secrets, built for browser flashing from the website.
 * `esphome/secrets.yaml.example`: a template for `secrets.yaml`, which holds Wi-Fi and update passwords and is not committed.
 * `esphome/diagram.json`, `esphome/wokwi.toml` and `esphome/scenarios/`: the [Wokwi](https://wokwi.com) simulation (see below).
 * `core/`: plain C++ for the lamp’s behaviour, with no ESPHome or Arduino code, so it can be tested on a computer. It holds the candidate brightness curves from [#16](https://github.com/Joe-Heffer/dimpsy/issues/16) in `brightness.h`, their unit tests and a tool that prints them.
@@ -27,6 +28,8 @@ esphome run dimpsy.yaml                # compile, flash and show logs
 ```
 
 Run these from the `firmware/esphome/` folder.
+
+To install without ESPHome, use the [flash page](https://joe-heffer.github.io/dimpsy/flash/) on the website. It flashes `dimpsy-web.yaml`, a copy of `dimpsy.yaml` with no built-in passwords.
 
 ## Simulation
 
