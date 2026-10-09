@@ -10,17 +10,18 @@ Dimpsy is an open source bedside sleep light (early prototype). See [README.md](
 
 ## Layout
 
-* `firmware/`: ESPHome configuration for the ESP32 DevKitC (GPL-3.0-or-later)
+* `firmware/`: ESPHome configuration for the ESP32 DevKitC, and portable C++ in `firmware/core/` (GPL-3.0-or-later)
 * `hardware/`: KiCad files and `bom.csv` (CERN-OHL-S-2.0)
 * `enclosure/`: CAD and STL files (CC-BY-SA-4.0)
 * `docs/`: design principles, requirements and prototype notes (CC-BY-SA-4.0)
 
 ## Checks
 
-Run both before committing. CI runs the same checks.
+Run these before committing. CI runs the same checks.
 
 ```sh
 reuse lint
+make -C firmware/core test
 cd firmware/esphome && cp secrets.yaml.example secrets.yaml && esphome config dimpsy.yaml
 ```
 
@@ -30,6 +31,7 @@ cd firmware/esphome && cp secrets.yaml.example secrets.yaml && esphome config di
 * Every new file needs an SPDX copyright and licence header matching its folder (`reuse annotate`). Files that cannot hold comments are covered by `REUSE.toml`.
 * Do not copy code or files from Led’o’clock. Record any other third-party material in [THIRD_PARTY.md](THIRD_PARTY.md) and keep its notices intact.
 * The board in `firmware/esphome/dimpsy.yaml` follows [decision 0007](docs/decisions/0007-microcontroller-board.md) for the first prototype only. The board for the finished lamp is not decided.
+* Keep `firmware/core/` free of ESPHome and Arduino code, so it builds with the system compiler.
 * Never commit `firmware/esphome/secrets.yaml`. Use `firmware/esphome/secrets.yaml.example` for placeholders.
 * Write prose in British English, in Markdown, using `*` for bullet lists.
 * Follow `.editorconfig` (2-space indent, 4 for C/C++, INI and TOML).
