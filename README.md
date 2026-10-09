@@ -20,7 +20,7 @@ Dimpsy is designed to be powered by USB-C only. It must never be connected to ma
 
 | Folder | Contents |
 | --- | --- |
-| `firmware/` | PlatformIO project for the ESP32 DevKitC (Arduino framework) |
+| `firmware/` | ESPHome configuration for the ESP32 DevKitC |
 | `hardware/` | KiCad schematics and PCB layout |
 | `enclosure/` | CAD source and exported STL files |
 | `docs/` | Design principles, requirements and [design decisions](docs/decisions/README.md) |

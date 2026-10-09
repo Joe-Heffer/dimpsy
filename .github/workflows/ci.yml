@@ -34,35 +34,20 @@ jobs:
         with:
           path: |
             ~/.cache/pip
-            ~/.platformio/.cache
-            ~/.platformio/packages
-            ~/.platformio/platforms
-          key: ${{ runner.os }}-pio-${{ hashFiles('firmware/platformio.ini') }}
+            ~/.platformio
+            ~/.cache/esphome
+          key: ${{ runner.os }}-esphome-${{ hashFiles('firmware/dimpsy.yaml') }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install PlatformIO
-        run: pip install --upgrade platformio
+      - name: Install ESPHome
+        run: pip install --upgrade esphome
+      - name: Create placeholder secrets
+        working-directory: firmware
+        run: cp secrets.example.yaml secrets.yaml
+      - name: Validate configuration
+        working-directory: firmware
+        run: esphome config dimpsy.yaml
       - name: Build
-        run: pio run --project-dir firmware
-
-  firmware-check:
-    name: Static analysis
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cache/pip
-            ~/.platformio/.cache
-            ~/.platformio/packages
-            ~/.platformio/platforms
-          key: ${{ runner.os }}-pio-${{ hashFiles('firmware/platformio.ini') }}
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install PlatformIO
-        run: pip install --upgrade platformio
-      - name: Check
-        run: pio check --project-dir firmware --fail-on-defect=high --fail-on-defect=medium
+        working-directory: firmware
+        run: esphome compile dimpsy.yaml
