@@ -9,6 +9,9 @@ SPDX-License-Identifier: CC-BY-4.0
 <div class="dimpsy-hero" markdown>
 <div markdown>
 
+![Dimpsy logo: a sun setting below the horizon, above the word dimpsy](assets/logo/dimpsy-logo.svg#only-light){ .dimpsy-logo }
+![Dimpsy logo: a sun setting below the horizon, above the word dimpsy](assets/logo/dimpsy-logo-dark.svg#only-dark){ .dimpsy-logo }
+
 <p class="dimpsy-tagline">An open source bedside sleep light with a gentle sunrise alarm and dawn and dusk modes to support sleep hygiene.</p>
 
 Its defaults are sensory-friendly and suitable for autistic adults, but it is a general-purpose lamp. Every setting is configurable.

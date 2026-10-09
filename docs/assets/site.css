@@ -1,7 +1,32 @@
 /* SPDX-FileCopyrightText: 2026 Joe Heffer */
 /* SPDX-License-Identifier: MIT */
 
+/* Brand colours from the Dimpsy logo: dusk indigo for the header, amber accent. */
+:root,
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1e1b3a;
+  --md-primary-fg-color--light: #4b3f72;
+  --md-primary-fg-color--dark: #141228;
+  --md-primary-bg-color: #f6f1ea;
+  --md-primary-bg-color--light: #f6f1eab3;
+}
+
+/* Links use the lighter indigo in dark mode so they stay readable. */
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-typeset-a-color: #b3a6e0;
+}
+
+.md-header__button.md-logo img {
+  height: 1.6rem;
+}
+
 /* Home page */
+
+.md-typeset img.dimpsy-logo {
+  display: block;
+  width: 11rem;
+  margin-bottom: 1rem;
+}
 
 .dimpsy-hero {
   display: flex;

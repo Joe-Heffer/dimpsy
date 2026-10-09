@@ -29,6 +29,7 @@ These files only include a file from elsewhere in the repository. Edit the origi
 ## Supporting files
 
 * `assets/`: site stylesheet and favicon.
+* `assets/logo/`: the Dimpsy logo as SVG. `dimpsy-logo.svg` and `dimpsy-mark.svg` are for light backgrounds; the `-dark` versions are for dark backgrounds. The wordmark is converted to outlines, so no font is needed.
 * `images/`: SVG diagrams used by the pages.
 * `tools/`: the curve explorer page (`curves.md`) and its scripts. Keep `brightness.js` in step with `firmware/core/brightness.h`.
 * `hooks/links.py`: MkDocs hook that points links to files outside this folder at GitHub. It is not published.
