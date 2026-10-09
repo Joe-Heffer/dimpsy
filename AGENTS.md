@@ -39,3 +39,4 @@ For changes to `docs/`, `mkdocs.yml` or the website, also run `mkdocs build --st
 * Write prose in British English, in Markdown, using `*` for bullet lists.
 * Follow `.editorconfig` (2-space indent, 4 for C/C++, INI and TOML).
 * Record notable changes in [CHANGELOG.md](CHANGELOG.md) under “Unreleased”.
+* Write commit messages in the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format: a type such as `feat`, `fix`, `docs`, `ci`, `build`, `test`, `refactor` or `chore`, an optional scope in brackets, a colon, then a short description in the imperative mood, for example `docs(safety): add monitoring checks`. Mark breaking changes with `!` after the type or scope, or with a `BREAKING CHANGE:` footer.
