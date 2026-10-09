@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch/
+
+# KiCad backups, caches and lock files
+*-backups/
+*.bak
+*.bck
+*.kicad_prl
+fp-info-cache
+_autosave-*
+\#auto_saved_files#
+*.lck
+~*.lck
+
+# FreeCAD backups
+*.FCBak
+*.FCStd1
+
+# Python (reuse, PlatformIO tooling)
+.venv/
+venv/
+__pycache__/
+
+# Operating systems
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editors
+.idea/
+*.swp
+*.swo
+*~
