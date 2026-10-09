@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# ESPHome configuration for the Dimpsy prototype (proto-1).
+# https://esphome.io
+#
+# The first prototype uses an ESP32 DevKitC (ESP32-WROOM-32 module).
+# See docs/decisions/0007-microcontroller-board.md for the board and the
+# provisional pin map, and docs/decisions/0004-prototype-firmware-platform.md
+# for the choice of ESPHome. The board for the finished lamp is not yet decided.
+#
+# Copy secrets.yaml.example to secrets.yaml and fill it in before building.
+
+esphome:
+  name: dimpsy
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+logger:
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+# The lamp must work fully without a network (see docs/design-principles.md).
+# Wi-Fi is only for settings, time and updates, so nothing here may block the
+# lamp's local behaviour when the network is missing.
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: Dimpsy Fallback
+    password: !secret ap_password
+
+web_server:
+  port: 80

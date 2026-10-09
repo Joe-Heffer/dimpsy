@@ -14,4 +14,4 @@ SPDX-License-Identifier: CC0-1.0
 * [ ] Anything taken from another project is recorded in `THIRD_PARTY.md`
 * [ ] A decision file in `docs/decisions/` is added or updated if this changes a design choice
 * [ ] `CHANGELOG.md` is updated under “Unreleased”
-* [ ] Firmware changes build with `pio run --project-dir firmware`
+* [ ] Firmware changes validate with `esphome config` and build with `esphome compile` (see `firmware/README.md`)

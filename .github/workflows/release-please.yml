@@ -17,41 +17,11 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-      tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
-      - id: release
-        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
         with:
           # A personal access token lets CI run on the release pull request.
           # Falls back to GITHUB_TOKEN, whose pull requests do not trigger workflows.
           token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
-
-  firmware-asset:
-    name: Attach firmware to release
-    needs: release-please
-    if: ${{ needs.release-please.outputs.release_created }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        with:
-          python-version: "3.12"
-      - name: Install PlatformIO
-        run: pip install --upgrade platformio
-      - name: Build
-        run: pio run --project-dir firmware
-      - name: Upload
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ needs.release-please.outputs.tag_name }}
-        run: |
-          cp firmware/.pio/build/esp32dev/firmware.bin "dimpsy-firmware-${TAG}-esp32dev.bin"
-          gh release upload "$TAG" "dimpsy-firmware-${TAG}-esp32dev.bin" --clobber
