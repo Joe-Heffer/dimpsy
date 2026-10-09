@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="784" viewBox="0 0 380 392" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>Dimpsy prototype line drawing</title>
+  <desc>Line drawing of an IKEA Fado globe lamp with an LED strip wound round an aluminium tube inside, connected by a cable through a screw terminal, which also takes a power adapter, to a bedside console box with two knobs, a toggle switch and a large snooze button on its top. Not to scale.</desc>
+  <defs>
+    <style>
+      .ts { font-size: 12px; fill: #444441; }
+      .o { fill: #F1EFE8; stroke: #2C2C2A; stroke-width: 1; }
+      .leader { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 2; fill: none; }
+    </style>
+  </defs>
+  <rect width="380" height="392" fill="#FFFFFF"/>
+
+  <circle cx="280" cy="130" r="75" fill="#FAC775" fill-opacity="0.22" stroke="#2C2C2A" stroke-width="1"/>
+  <rect x="270" y="140" width="20" height="64" rx="2" fill="#B4B2A9" stroke="#2C2C2A" stroke-width="0.8"/>
+  <g stroke="#EF9F27" stroke-width="3" stroke-linecap="round">
+    <line x1="271" y1="150" x2="289" y2="144"/>
+    <line x1="271" y1="159" x2="289" y2="153"/>
+    <line x1="271" y1="168" x2="289" y2="162"/>
+    <line x1="271" y1="177" x2="289" y2="171"/>
+    <line x1="271" y1="186" x2="289" y2="180"/>
+    <line x1="271" y1="195" x2="289" y2="189"/>
+  </g>
+  <path class="o" d="M258 205 L302 205 L312 224 L248 224 Z"/>
+
+  <path d="M282 224 C282 250 272 262 266 262" fill="none" stroke="#888780" stroke-width="2.5"/>
+  <rect x="248" y="255" width="18" height="14" rx="2" class="o" stroke-width="0.8"/>
+  <line x1="248" y1="262" x2="220" y2="262" stroke="#888780" stroke-width="2.5"/>
+  <line x1="300" y1="266" x2="266" y2="266" stroke="#888780" stroke-width="2"/>
+  <rect x="300" y="252" width="50" height="28" rx="4" class="o"/>
+
+  <path class="o" d="M20 250 L200 250 L225 215 L45 215 Z"/>
+  <rect class="o" x="20" y="250" width="180" height="40"/>
+  <path class="o" d="M200 250 L225 215 L225 255 L200 290 Z"/>
+  <text class="ts" x="110" y="270" text-anchor="middle" dominant-baseline="central">Console, foam board</text>
+
+  <path class="o" d="M49 228 L49 236 A16 6 0 0 0 81 236 L81 228"/>
+  <ellipse class="o" cx="65" cy="228" rx="16" ry="6"/>
+  <line x1="65" y1="228" x2="74" y2="225" stroke="#2C2C2A" stroke-width="1.2"/>
+  <path class="o" d="M93 226 L93 233 A12 4.5 0 0 0 117 233 L117 226"/>
+  <ellipse class="o" cx="105" cy="226" rx="12" ry="4.5"/>
+  <ellipse class="o" cx="143" cy="234" rx="6" ry="2.5"/>
+  <line x1="143" y1="234" x2="149" y2="221" stroke="#2C2C2A" stroke-width="2.5" stroke-linecap="round"/>
+  <path class="o" d="M165 231 L165 236 A13 5 0 0 0 191 236 L191 231"/>
+  <ellipse class="o" cx="178" cy="231" rx="13" ry="5"/>
+  <ellipse cx="178" cy="230" rx="8" ry="3" fill="none" stroke="#2C2C2A" stroke-width="0.6"/>
+
+  <text class="ts" x="20" y="62" dominant-baseline="central">Opal glass globe, 25 cm</text>
+  <line class="leader" x1="186" y1="60" x2="221" y2="84"/>
+  <text class="ts" x="20" y="112" dominant-baseline="central">LED strip wound on</text>
+  <text class="ts" x="20" y="128" dominant-baseline="central">aluminium tube</text>
+  <line class="leader" x1="150" y1="120" x2="268" y2="165"/>
+  <text class="ts" x="20" y="190" dominant-baseline="central">Bulb holder removed</text>
+  <line class="leader" x1="158" y1="190" x2="250" y2="212"/>
+  <text class="ts" x="360" y="296" text-anchor="end" dominant-baseline="central">Power adapter</text>
+  <text class="ts" x="174" y="314" dominant-baseline="central">Snooze button</text>
+  <line class="leader" x1="178" y1="302" x2="178" y2="243"/>
+  <text class="ts" x="139" y="334" dominant-baseline="central">Alarm toggle</text>
+  <line class="leader" x1="143" y1="322" x2="143" y2="239"/>
+  <text class="ts" x="101" y="354" dominant-baseline="central">Warmth knob</text>
+  <line class="leader" x1="105" y1="342" x2="105" y2="240"/>
+  <text class="ts" x="61" y="374" dominant-baseline="central">Brightness knob</text>
+  <line class="leader" x1="65" y1="362" x2="65" y2="244"/>
+</svg>

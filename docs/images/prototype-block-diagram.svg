@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="470" viewBox="0 0 680 470" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>Dimpsy prototype block diagram</title>
+  <desc>A bedside console containing an ESP32 and tactile controls connects by a cable to an IKEA Fado lamp containing an LED core with one of two swappable strip candidates. External power supplies feed both. A pillow light logger and a web page connect over Wi-Fi.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .th { font-size: 14px; font-weight: 500; }
+      .ts { font-size: 12px; }
+    </style>
+  </defs>
+  <rect width="680" height="470" fill="#FFFFFF"/>
+
+  <rect x="40" y="30" width="280" height="290" rx="20" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text class="th" x="180" y="56" text-anchor="middle" dominant-baseline="central" fill="#3C3489">Bedside console</text>
+  <text class="ts" x="180" y="74" text-anchor="middle" dominant-baseline="central" fill="#534AB7">Foam-board mock-up</text>
+
+  <rect x="60" y="92" width="240" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="th" x="180" y="110" text-anchor="middle" dominant-baseline="central" fill="#085041">ESP32 DevKit</text>
+  <text class="ts" x="180" y="130" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">ESPHome, level shifter</text>
+
+  <rect x="60" y="164" width="240" height="140" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text class="th" x="180" y="186" text-anchor="middle" dominant-baseline="central" fill="#444441">Controls</text>
+  <g class="ts" fill="#5F5E5A" text-anchor="middle" dominant-baseline="central">
+    <text x="180" y="210">Encoder: brightness, on/off</text>
+    <text x="180" y="230">Encoder or slider: warmth</text>
+    <text x="180" y="250">Toggle: alarm armed</text>
+    <text x="180" y="270">Arcade button: snooze</text>
+    <text x="180" y="290">Rotary switch: mode (opt.)</text>
+  </g>
+
+  <rect x="400" y="30" width="240" height="290" rx="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text class="th" x="520" y="56" text-anchor="middle" dominant-baseline="central" fill="#633806">IKEA Fado lamp</text>
+  <text class="ts" x="520" y="74" text-anchor="middle" dominant-baseline="central" fill="#854F0B">25 cm opal globe</text>
+
+  <rect x="420" y="92" width="200" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text class="th" x="520" y="110" text-anchor="middle" dominant-baseline="central" fill="#712B13">LED core</text>
+  <text class="ts" x="520" y="130" text-anchor="middle" dominant-baseline="central" fill="#993C1D">Strip on aluminium tube</text>
+
+  <rect x="420" y="164" width="200" height="56" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text class="th" x="520" y="182" text-anchor="middle" dominant-baseline="central" fill="#444441">Candidate A</text>
+  <text class="ts" x="520" y="202" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">SK6812 RGBW, 5 V</text>
+
+  <rect x="420" y="236" width="200" height="56" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text class="th" x="520" y="254" text-anchor="middle" dominant-baseline="central" fill="#444441">Candidate B</text>
+  <text class="ts" x="520" y="274" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">12 V white + red, MOSFETs</text>
+
+  <text class="ts" x="360" y="106" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">Cable</text>
+  <line x1="302" y1="120" x2="416" y2="120" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="250" y="360" width="220" height="56" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text class="th" x="360" y="378" text-anchor="middle" dominant-baseline="central" fill="#444441">Power supplies</text>
+  <text class="ts" x="360" y="398" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">Outside both boxes</text>
+  <line x1="290" y1="358" x2="290" y2="324" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="358" x2="440" y2="324" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="360" width="190" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text class="th" x="135" y="378" text-anchor="middle" dominant-baseline="central" fill="#085041">Pillow logger</text>
+  <text class="ts" x="135" y="398" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">TSL2591 + ESP32</text>
+
+  <rect x="490" y="360" width="150" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text class="th" x="565" y="378" text-anchor="middle" dominant-baseline="central" fill="#085041">Phone or laptop</text>
+  <text class="ts" x="565" y="398" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">ESPHome web page</text>
+
+  <text class="ts" x="340" y="446" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">Dashed outline: Wi-Fi only, no cable</text>
+</svg>
