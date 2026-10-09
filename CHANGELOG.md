@@ -29,6 +29,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * `firmware/core/brightness.h` with the candidate perceptual brightness curves (exponential, CIE 1931 lightness and gamma), native unit tests, and a CI job that runs them and charts each curve in the job summary.
 * Wokwi simulation project in `firmware/esphome/` and a CI workflow that builds the firmware and runs its scenarios when `WOKWI_CLI_TOKEN` is set.
 * zizmor security checks for GitHub Actions workflows, and a codespell spelling check, in the Lint workflow.
+* Project website built with Material for MkDocs from `docs/` and published to GitHub Pages, with home, roadmap, licensing and developer tools pages, including how to run the Wokwi simulation.
+* Dawn curve explorer on the website: a browser port of `firmware/core/brightness.h` with a CI check that it matches the C++ curves.
 
 ### Changed
 

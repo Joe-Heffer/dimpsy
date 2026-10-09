@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# Links for the link checker in the Lint workflow to skip.
+
+# The website is only live once GitHub Pages is enabled and main has deployed.
+^https://joe-heffer\.github\.io/dimpsy

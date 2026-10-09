@@ -3,4 +3,4 @@
 # SPDX-License-Identifier: CC0-1.0
 
 [codespell]
-skip = .git,.pio,LICENSES,LICENSE.md
+skip = .git,.pio,LICENSES,LICENSE.md,site

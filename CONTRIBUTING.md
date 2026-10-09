@@ -56,6 +56,14 @@ The project follows the [REUSE specification](https://reuse.software). Every new
 * Avoid committing large binaries that change often, such as photos, videos or exports that can be regenerated. Keep them in a shared folder and link to them from the docs.
 * If a large binary must be versioned, discuss using Git LFS in an issue first, because it adds setup for everyone who clones the repository.
 
+## Website
+
+The website at <https://joe-heffer.github.io/dimpsy/> is built from the Markdown in `docs/` with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). The navigation is in `mkdocs.yml`. Pages such as the firmware guide and this file are included from elsewhere in the repository, so edit the original, not the copy in `docs/`.
+
+* Preview it with `pip install -r requirements-docs.txt` and `mkdocs serve`.
+* Check it with `mkdocs build --strict`. CI runs the same check and publishes the site from `main`.
+* Add new pages to `nav` in `mkdocs.yml`.
+
 ## Style
 
 * Write prose in British English, in Markdown, using `*` for bullet lists.

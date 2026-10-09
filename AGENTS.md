@@ -13,7 +13,7 @@ Dimpsy is an open source bedside sleep light (early prototype). See [README.md](
 * `firmware/`: ESPHome configuration for the ESP32 DevKitC, and portable C++ in `firmware/core/` (GPL-3.0-or-later)
 * `hardware/`: KiCad files and `bom.csv` (CERN-OHL-S-2.0)
 * `enclosure/`: CAD and STL files (CC-BY-SA-4.0)
-* `docs/`: design principles, requirements and prototype notes (CC-BY-SA-4.0)
+* `docs/`: design principles, requirements, prototype notes and the website source, built by `mkdocs.yml` (CC-BY-SA-4.0)
 
 ## Checks
 
@@ -24,6 +24,8 @@ reuse lint
 make -C firmware/core test
 cd firmware/esphome && cp secrets.yaml.example secrets.yaml && esphome config dimpsy.yaml
 ```
+
+For changes to `docs/`, `mkdocs.yml` or the website, also run `mkdocs build --strict` (see `requirements-docs.txt`). Keep `docs/tools/brightness.js` in step with `firmware/core/brightness.h`.
 
 ## Rules
 

@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# Python packages for building the website (mkdocs.yml).
+# MkDocs 2 drops plugins, so stay on 1.x.
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+mkdocs-include-markdown-plugin==7.3.0
