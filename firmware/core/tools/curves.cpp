@@ -34,14 +34,14 @@ const NamedCurve curves[] = {
 };
 
 float level_at_minute(const dimpsy::CurveParams &params, uint32_t minute) {
-    return dimpsy::level(params,
-                         dimpsy::ramp_position(minute * 60000u, dawn_ms));
+    const float position = dimpsy::ramp_position(minute * 60000u, dawn_ms);
+    return dimpsy::level(params, position);
 }
 
 // Number of different duty values the output passes through between the
 // start of the dawn and until_ms. Few values means visible steps.
-size_t distinct_duties(const dimpsy::CurveParams &params, unsigned bits,
-                       uint32_t until_ms) {
+size_t distinct_duties(
+    const dimpsy::CurveParams &params, unsigned bits, uint32_t until_ms) {
     std::set<uint32_t> seen;
     for (uint32_t t = 0; t <= until_ms; t += update_ms) {
         seen.insert(dimpsy::duty(

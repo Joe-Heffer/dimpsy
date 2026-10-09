@@ -56,9 +56,9 @@ void test_known_values() {
     // The linear segment and the cube meet at L* = 8.
     CHECK(near(dimpsy::cie_lightness_level(0.08f), 8.0f / 903.3f, 1e-5f));
     // Each tenth of the dial is a 10000^0.1 (about 2.5x) step.
-    CHECK(near(dimpsy::exponential_level(0.6f, 10000.0f) /
-                   dimpsy::exponential_level(0.5f, 10000.0f),
-               std::pow(10000.0f, 0.1f), 1e-3f));
+    const float step = dimpsy::exponential_level(0.6f, 10000.0f) /
+        dimpsy::exponential_level(0.5f, 10000.0f);
+    CHECK(near(step, std::pow(10000.0f, 0.1f), 1e-3f));
     CHECK(near(dimpsy::gamma_level(0.5f, 2.0f), 0.25f));
 }
 
