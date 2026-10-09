@@ -23,7 +23,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Hardware organisation guidance in `docs/hardware-practices.md` and a prototype bill of materials template in `hardware/bom.csv`.
 * `AGENTS.md` with guidance for AI coding agents.
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
-
 * zizmor security checks for GitHub Actions workflows, and a codespell spelling check, in the Lint workflow.
 
 ### Changed
