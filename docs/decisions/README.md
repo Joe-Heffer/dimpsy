@@ -33,3 +33,4 @@ Do not edit an accepted decision to change its outcome. Write a new one that sup
 | [0004](0004-prototype-firmware-platform.md) | Firmware platform for the prototype | Open |
 | [0005](0005-lamp-body.md) | Lamp body: IKEA Fado or Tokabo | Open |
 | [0006](0006-led-candidate.md) | LED candidate for the prototype | Open |
+| [0007](0007-microcontroller-board.md) | Microcontroller board | Accepted |

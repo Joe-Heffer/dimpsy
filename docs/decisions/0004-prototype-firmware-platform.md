@@ -14,7 +14,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 The repository and the prototype description point in different directions:
 
-* `firmware/platformio.ini` sets up a PlatformIO project for an ESP32-C3 with the Arduino framework. It describes the board as a placeholder.
+* `firmware/platformio.ini` sets up a PlatformIO project with the Arduino framework, now targeting the ESP32 DevKitC (see [decision 0007](0007-microcontroller-board.md)).
 * [docs/prototype.md](../prototype.md) says the prototype runs ESPHome on an ESP32 DevKit, with settings and schedules reached through the ESPHome web page.
 
 The design principles also call for the lamp to work without a network, and the project prefers reusing existing open source work.
