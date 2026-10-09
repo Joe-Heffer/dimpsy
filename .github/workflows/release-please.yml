@@ -21,7 +21,7 @@ jobs:
       tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
       - id: release
-        uses: googleapis/release-please-action@v4
+        uses: googleapis/release-please-action@v5
         with:
           # A personal access token lets CI run on the release pull request.
           # Falls back to GITHUB_TOKEN, whose pull requests do not trigger workflows.
