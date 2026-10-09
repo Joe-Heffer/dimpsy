@@ -8,6 +8,8 @@ SPDX-License-Identifier: CC-BY-4.0
 
 The first prototype is a bench and bedside test rig. Its purpose is to choose an LED, tune the dawn curve and try out the controls before any custom enclosure or PCB is designed.
 
+A simpler [alpha build](alpha.md) from stocked parts comes first, to check the system end to end.
+
 ## Layout
 
 ![Block diagram of the prototype: a bedside console with an ESP32 and controls, cabled to an IKEA Fado lamp with an LED core](images/prototype-block-diagram.svg)

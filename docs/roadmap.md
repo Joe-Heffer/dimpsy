@@ -8,9 +8,9 @@ SPDX-License-Identifier: CC-BY-4.0
 
 Dimpsy is an early prototype. This page gives the broad order of work. The detail lives in [GitHub issues](https://github.com/Joe-Heffer/dimpsy/issues) and the [decision records](decisions/README.md).
 
-## Now: first prototype
+## Now: alpha and first prototype
 
-A bench and bedside test rig, described in [First prototype](prototype.md).
+An [alpha build](alpha.md) from stocked parts smoke-tests the whole system while the first prototype’s parts are sourced. The first prototype is a bench and bedside test rig, described in [First prototype](prototype.md).
 
 * Choose an LED: an SK6812 RGBW strip or warm white and red 12 V strips ([decision 0006](decisions/0006-led-candidate.md), open).
 * Choose a perceptual brightness curve for the dimmer and the dawn and dusk ramps (issue [#16](https://github.com/Joe-Heffer/dimpsy/issues/16)). Try them in the [curve explorer](tools/curves.md).

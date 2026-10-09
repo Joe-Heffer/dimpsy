@@ -1,0 +1,272 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: MIT
+
+# ESPHome configuration for the Dimpsy alpha: a smoke test rig built from
+# parts stocked by UK suppliers. See docs/alpha.md for the parts, wiring and
+# test plan, and docs/decisions/0009-alpha-build.md for why it exists.
+#
+# It reuses dimpsy.yaml (board, Wi-Fi, updates, web page) and adds:
+#
+# * a 30-LED SK6812 RGBW strip on GPIO23, through a 74HCT125 level shifter
+# * one rotary encoder with a push switch, an arcade button and a toggle
+# * a DS3231 clock on I2C, set from the network when Wi-Fi is available
+# * a wake time and a sunrise ramp that runs without a network
+#
+# Pins follow the provisional map in docs/decisions/0007-microcontroller-board.md.
+#
+# Validate with: esphome config dimpsy-alpha.yaml
+
+packages:
+  base: !include dimpsy.yaml
+
+esphome:
+  name: dimpsy-alpha
+  friendly_name: Dimpsy alpha
+  on_boot:
+    priority: 600
+    then:
+      - ds1307.read_time:
+          id: rtc
+
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+
+time:
+  # The DS3231 keeps the time when the network or power is lost. ESPHome's
+  # ds1307 component reads the DS3231, which uses the same clock registers
+  # (issue #42). With no clock fitted, the network time below is used.
+  - platform: ds1307
+    id: rtc
+    timezone: Europe/London
+    on_time:
+      # Once a minute, start the sunrise if the alarm is armed and the wake
+      # time is sunrise_minutes away.
+      - seconds: 0
+        then:
+          - if:
+              condition:
+                and:
+                  - binary_sensor.is_on: alarm_switch
+                  - lambda: |-
+                      auto now = id(rtc).now();
+                      if (!now.is_valid()) {
+                        now = id(net_time).now();
+                      }
+                      if (!now.is_valid()) {
+                        return false;
+                      }
+                      int ramp = (int) id(sunrise_minutes).state;
+                      int wake = id(wake_time).hour * 60 + id(wake_time).minute;
+                      int start = ((wake - ramp) % 1440 + 1440) % 1440;
+                      return now.hour * 60 + now.minute == start;
+              then:
+                - script.execute:
+                    id: sunrise
+                    ramp_s: !lambda "return (int) id(sunrise_minutes).state * 60;"
+                    hold_s: 3600
+  - platform: sntp
+    id: net_time
+    timezone: Europe/London
+    on_time_sync:
+      then:
+        - ds1307.write_time:
+            id: rtc
+
+light:
+  - platform: esp32_rmt_led_strip
+    id: lamp
+    name: Lamp
+    pin: GPIO23
+    num_leds: 30
+    chipset: SK6812
+    channel_colors: GRBW
+    # Firmware brightness cap. The white channel can reach full output, and
+    # the colour channels are held to half. With 30 LEDs that keeps the strip
+    # under about 1.5 A, well inside the 3 A supply (docs/alpha.md).
+    color_correct: [50%, 50%, 50%, 100%]
+    # Start safe: after a power cut or restart the lamp comes back off.
+    restore_mode: ALWAYS_OFF
+    default_transition_length: 1s
+    on_turn_on:
+      - script.execute: safety_timer
+    on_turn_off:
+      - script.stop: safety_timer
+
+datetime:
+  - platform: template
+    id: wake_time
+    type: time
+    name: Wake time
+    optimistic: true
+    restore_value: true
+    initial_value: "07:00:00"
+
+number:
+  - platform: template
+    id: sunrise_minutes
+    name: Sunrise length
+    unit_of_measurement: min
+    min_value: 5
+    max_value: 60
+    step: 5
+    initial_value: 30
+    optimistic: true
+    restore_value: true
+
+button:
+  # Runs a three-minute sunrise for testing the ramp at the bench.
+  - platform: template
+    name: Test sunrise (3 minutes)
+    on_press:
+      - script.execute:
+          id: sunrise
+          ramp_s: 180
+          hold_s: 60
+
+script:
+  # Sunrise ramp: deep red at the lowest level, through amber, to warm white.
+  # The SK6812 has 256 steps per channel, so the first minutes will show
+  # visible steps. The alpha tests the system, not the light quality.
+  - id: sunrise
+    mode: restart
+    parameters:
+      ramp_s: int
+      hold_s: int
+    then:
+      - light.turn_on:
+          id: lamp
+          brightness: 1%
+          red: 100%
+          green: 0%
+          blue: 0%
+          white: 0%
+          transition_length: 0s
+      - light.turn_on:
+          id: lamp
+          brightness: 30%
+          red: 100%
+          green: 25%
+          blue: 0%
+          white: 20%
+          transition_length: !lambda "return ramp_s * 1000 / 3;"
+      - delay: !lambda "return ramp_s * 1000 / 3;"
+      - light.turn_on:
+          id: lamp
+          brightness: 100%
+          red: 60%
+          green: 20%
+          blue: 0%
+          white: 100%
+          transition_length: !lambda "return ramp_s * 1000 * 2 / 3;"
+      - delay: !lambda "return ramp_s * 1000 * 2 / 3;"
+      - delay: !lambda "return hold_s * 1000;"
+      - light.turn_off:
+          id: lamp
+          transition_length: 5min
+
+  # Limits time on: the lamp fades out three hours after it was turned on,
+  # however it was turned on.
+  - id: safety_timer
+    mode: restart
+    then:
+      - delay: 3h
+      - light.turn_off:
+          id: lamp
+          transition_length: 1min
+
+sensor:
+  - platform: rotary_encoder
+    id: dimmer
+    internal: true
+    pin_a:
+      number: GPIO32
+      mode:
+        input: true
+        pullup: true
+    pin_b:
+      number: GPIO33
+      mode:
+        input: true
+        pullup: true
+    on_clockwise:
+      - script.stop: sunrise
+      - if:
+          condition:
+            light.is_off: lamp
+          then:
+            - light.turn_on:
+                id: lamp
+                brightness: 5%
+                red: 100%
+                green: 30%
+                blue: 0%
+                white: 100%
+          else:
+            - light.dim_relative:
+                id: lamp
+                relative_brightness: 5%
+                transition_length: 0.2s
+    on_anticlockwise:
+      - script.stop: sunrise
+      - light.dim_relative:
+          id: lamp
+          relative_brightness: -5%
+          transition_length: 0.2s
+          brightness_limits:
+            min_brightness: 1%
+
+binary_sensor:
+  # Encoder push: lamp on or off.
+  - platform: gpio
+    id: encoder_push
+    name: Knob press
+    pin:
+      number: GPIO25
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    filters:
+      - delayed_on_off: 20ms
+    on_press:
+      - script.stop: sunrise
+      - light.toggle: lamp
+
+  # Arcade button: stops a sunrise in progress, otherwise lamp on or off.
+  - platform: gpio
+    id: snooze_button
+    name: Snooze button
+    pin:
+      number: GPIO17
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    filters:
+      - delayed_on_off: 20ms
+    on_press:
+      - if:
+          condition:
+            script.is_running: sunrise
+          then:
+            - script.stop: sunrise
+            - light.turn_off:
+                id: lamp
+                transition_length: 2s
+          else:
+            - light.toggle: lamp
+
+  # Toggle switch: alarm armed when on.
+  - platform: gpio
+    id: alarm_switch
+    name: Alarm switch
+    pin:
+      number: GPIO16
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    filters:
+      - delayed_on_off: 50ms
