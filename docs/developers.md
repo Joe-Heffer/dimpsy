@@ -29,7 +29,7 @@ The diagram has no SK6812 strip or TSL2591 light sensor, so the lamp output is n
 1. Build the firmware as above.
 2. Start a [new ESP32 project on wokwi.com](https://wokwi.com/projects/new/esp32).
 3. Replace the contents of the `diagram.json` tab with the repository’s `diagram.json`.
-4. Press F1, choose **Upload Firmware and Start Simulation**, and pick `.esphome/build/dimpsy/.pioenvs/dimpsy/firmware.factory.bin`.
+4. Press F1, choose **Upload Firmware and Start Simulation**, and pick `.esphome/build/dimpsy/build/firmware.factory.bin`.
 
 ### In CI
 
