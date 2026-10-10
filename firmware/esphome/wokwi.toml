@@ -6,5 +6,5 @@
 # https://docs.wokwi.com/wokwi-ci/getting-started
 [wokwi]
 version = 1
-firmware = ".esphome/build/dimpsy/.pioenvs/dimpsy/firmware.factory.bin"
-elf = ".esphome/build/dimpsy/.pioenvs/dimpsy/firmware.elf"
+firmware = ".esphome/build/dimpsy/build/firmware.factory.bin"
+elf = ".esphome/build/dimpsy/build/firmware.elf"

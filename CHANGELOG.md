@@ -54,3 +54,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Removed
 
 * PlatformIO project files, the `pio check` CI job and the firmware binary attached to releases.
+
+### Fixed
+
+* The website workflow, `wokwi.toml` and the developer guide now use the ESP-IDF build folder `.esphome/build/dimpsy/build/` for the firmware binaries, so the website workflow can publish `dimpsy.factory.bin` again.
