@@ -21,7 +21,7 @@ The Dimpsy prototype runs [ESPHome](https://esphome.io) on an ESP32 DevKitC. The
 ESPHome needs Python 3.
 
 ```sh
-pip install esphome
+pip install -r requirements.txt        # the ESPHome version CI uses
 cp secrets.yaml.example secrets.yaml   # then edit secrets.yaml
 esphome config dimpsy.yaml             # validate
 esphome run dimpsy.yaml                # compile, flash and show logs

@@ -23,6 +23,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Working-together and large-file guidance in `CONTRIBUTING.md`.
 * Hardware organisation guidance in `docs/hardware-practices.md` and a prototype bill of materials template in `hardware/bom.csv`.
 * `AGENTS.md` with guidance for AI coding agents.
+* Sanitiser builds of the firmware core under GCC and Clang in CI.
+* Weekly scheduled checks: a firmware build with the latest ESPHome and a full link check.
+* ESPHome pinned in `firmware/esphome/requirements.txt`, with Dependabot upgrades.
 * Decision 0007: the first prototype uses the ESP32 DevKitC, with a provisional pin map.
 * Decision 0005: the first prototype uses the IKEA Fado as the lamp body.
 * Dimpsy logo in `docs/assets/logo/`, shown in the README and on the website, with a matching favicon and site colours.

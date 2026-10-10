@@ -50,7 +50,7 @@ The [flash page](flash.md) installs the prototype firmware over USB with [ESP We
 ESPHome needs Python 3. Run these from `firmware/esphome/`:
 
 ```sh
-pip install esphome
+pip install -r requirements.txt        # the ESPHome version CI uses
 cp secrets.yaml.example secrets.yaml   # then edit secrets.yaml
 esphome config dimpsy.yaml             # validate
 esphome run dimpsy.yaml                # compile, flash and show logs
@@ -90,12 +90,15 @@ cd firmware/esphome && cp secrets.yaml.example secrets.yaml && esphome config di
 
 ## Continuous integration
 
+CI pins ESPHome in `firmware/esphome/requirements.txt`. Dependabot proposes upgrades, and the scheduled checks try the latest release each week so breakage shows up first there.
+
 | Workflow | What it checks |
 | --- | --- |
-| [CI](https://github.com/Joe-Heffer/dimpsy/actions/workflows/ci.yml) | REUSE compliance, ESPHome validation and build, core unit tests and the browser curve port |
+| [CI](https://github.com/Joe-Heffer/dimpsy/actions/workflows/ci.yml) | REUSE compliance, ESPHome validation and build, core unit tests (also under GCC and Clang with AddressSanitizer and UndefinedBehaviorSanitizer) and the browser curve port |
 | [Lint](https://github.com/Joe-Heffer/dimpsy/actions/workflows/lint.yml) | Markdown, EditorConfig, actionlint, links, spelling and zizmor |
 | [Wokwi simulation](https://github.com/Joe-Heffer/dimpsy/actions/workflows/wokwi.yml) | Boots the firmware in the simulator and runs the scenarios |
 | Website (`pages.yml`) | Builds this site and publishes it from `main` |
+| Scheduled checks (`scheduled.yml`) | Weekly: builds the firmware with the latest ESPHome release and checks all links |
 | [Pull request title](https://github.com/Joe-Heffer/dimpsy/actions/workflows/pr-title.yml) | Conventional commit titles, which Release Please reads |
 | [Release Please](https://github.com/Joe-Heffer/dimpsy/actions/workflows/release-please.yml) | Opens release pull requests and keeps the changelog |
 

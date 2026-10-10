@@ -1,0 +1,56 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# Weekly checks against things that change outside this repository.
+# GitHub emails the workflow owner when a scheduled run fails.
+name: Scheduled checks
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # CI pins ESPHome in firmware/esphome/requirements.txt. This job tries the
+  # latest release, so breakage shows up before Dependabot proposes the upgrade.
+  esphome-latest:
+    name: Firmware with latest ESPHome
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Install latest ESPHome
+        run: |
+          pip install --upgrade esphome
+          esphome version >> "$GITHUB_STEP_SUMMARY"
+      - name: Create placeholder secrets
+        working-directory: firmware/esphome
+        run: cp secrets.yaml.example secrets.yaml
+      - name: Validate and build
+        working-directory: firmware/esphome
+        run: |
+          for f in dimpsy.yaml dimpsy-web.yaml; do
+            esphome config "$f" > /dev/null
+            esphome compile "$f"
+          done
+
+  # Pull requests rarely touch every link, so external links can rot unnoticed.
+  links:
+    name: Links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --no-progress "**/*.md"
+          fail: true
