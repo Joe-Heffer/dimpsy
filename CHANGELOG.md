@@ -10,6 +10,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.1.0 (2026-10-10)
+
+
+### Features
+
+* add browser flashing page with ESP Web Tools ([#53](https://github.com/Joe-Heffer/dimpsy/issues/53)) ([cd225b6](https://github.com/Joe-Heffer/dimpsy/commit/cd225b6490006dda22aa92bb18c72d68150e3d8b))
+* **firmware:** add portable brightness curves with native tests ([#41](https://github.com/Joe-Heffer/dimpsy/issues/41)) ([44d673d](https://github.com/Joe-Heffer/dimpsy/commit/44d673db0fb0d5a137de1e42a8441504fffcbf65))
+* **firmware:** migrate prototype firmware from PlatformIO to ESPHome ([#34](https://github.com/Joe-Heffer/dimpsy/issues/34)) ([aca43ce](https://github.com/Joe-Heffer/dimpsy/commit/aca43ce957e138828c1581953bbb2eb7db9fef80))
+
+
+### Bug Fixes
+
+* **ci:** repair lint workflow failures ([#26](https://github.com/Joe-Heffer/dimpsy/issues/26)) ([814b975](https://github.com/Joe-Heffer/dimpsy/commit/814b975408840c56363c0d51147dad600fe6a0d3))
+* **ci:** use ESP-IDF build path for firmware binaries ([#75](https://github.com/Joe-Heffer/dimpsy/issues/75)) ([a26139d](https://github.com/Joe-Heffer/dimpsy/commit/a26139d335055f788c9aa7b089f21e0a129e84ef))
+
 ## [Unreleased]
 
 ### Added
