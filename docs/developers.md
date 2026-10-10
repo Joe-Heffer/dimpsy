@@ -98,7 +98,6 @@ CI pins ESPHome in `firmware/esphome/requirements.txt`. Dependabot proposes upgr
 | [Lint](https://github.com/Joe-Heffer/dimpsy/actions/workflows/lint.yml) | Markdown, EditorConfig, actionlint, links, spelling and zizmor |
 | [Wokwi simulation](https://github.com/Joe-Heffer/dimpsy/actions/workflows/wokwi.yml) | Boots the firmware in the simulator and runs the scenarios |
 | Website (`pages.yml`) | Builds this site and publishes it from `main` |
-| CodeQL (`codeql.yml`) | Static analysis of the C++, JavaScript and workflows, on every pull request and weekly |
 | Scheduled checks (`scheduled.yml`) | Weekly: builds the firmware with the latest ESPHome release and checks all links |
 | [Pull request title](https://github.com/Joe-Heffer/dimpsy/actions/workflows/pr-title.yml) | Conventional commit titles, which Release Please reads |
 | [Release Please](https://github.com/Joe-Heffer/dimpsy/actions/workflows/release-please.yml) | Opens release pull requests and keeps the changelog |
