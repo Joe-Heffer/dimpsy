@@ -8,3 +8,20 @@ proto-1,Q1,Logic-level MOSFET,Strip driver for candidate B,,,2,,,,candidate,One 
 proto-1,PS1,5 V 4 A adapter,Supply for candidate A,,,1,,,,candidate,Outside both boxes
 proto-1,U1,TSL2591 light sensor,Pillow light logger sensor,,,1,,,,candidate,Paired with a second ESP32
 proto-1,U2,74AHCT125 level shifter,3.3 V to 5 V data line for the SK6812 strip,,,1,,,,candidate,Needed only with LED candidate A. See decision 0007
+alpha,A1,ESP32 DevKitC (ESP32-WROOM-32),Controller in the console,XTVTX (Amazon),,1,,,Joe Heffer,held,Same board as proto-1. See docs/alpha.md
+alpha,D1,SK6812 RGBW LED strip (5 V; 60 LEDs/m; 1 m),Light source (LED candidate A),The Pi Hut,104549,1,14.40,,,to order,Cut to 30 LEDs. White colour temperature not stated; a warm white (RGBWW) strip from Amazon is the alternative
+alpha,U1,74AHCT125 or 74HCT125 level shifter (DIP-14),3.3 V to 5 V data line for the strip,The Pi Hut or RS,ADA1787 or RS 709-2205,1,,,,to order,
+alpha,PS1,Raspberry Pi 15 W USB-C power supply (UK plug),5.1 V 3 A supply,The Pi Hut,SC0443,1,7.70,,,to order,
+alpha,J1,USB-C breakout (downstream; 5.1 kΩ CC resistors),Power input,The Pi Hut or Pimoroni,ADA4090,1,2.90,,,to order,Cheap adapters without CC resistors will not draw power from a USB-C charger
+alpha,F1,Inline blade fuse holder with 3 A fuse,Supply input fuse,Amazon or RS,,1,,,,to order,
+alpha,W1,Wago 221 lever connector,5 V and ground rails,Amazon or Screwfix,,2,,,,to order,
+alpha,C1,1000 µF electrolytic capacitor (10 V or higher),Across the strip power,RS or The Pi Hut,,1,,,,to order,
+alpha,R1,330 Ω resistor,In the strip data line,Elegoo kit,,1,,,Joe Heffer,held,
+alpha,S1,Rotary encoder with push switch,Dimmer knob,The Pi Hut or Amazon,ADA377 or KY-040 module,1,4.40,,,to order,
+alpha,S2,30 mm arcade button,Snooze,The Pi Hut,104438,1,2.50,,,to order,
+alpha,S3,Miniature toggle switch (on-off),Alarm on or off,The Pi Hut or Amazon,,1,,,,to order,
+alpha,U2,DS3231 real-time clock,Keeps time without a network,The Pi Hut or Pimoroni,ADA5188,1,13.40,,,to order,Needs a CR1220 coin cell. Avoid ZS-042 modules with a CR2032 unless the charging path is disabled
+alpha,M1,Aluminium tube (about 25 mm across; 150 mm long),LED core,B&Q or Amazon,,1,,,,to order,
+alpha,L1,IKEA Fado lamp,Lamp body and globe,IKEA,,1,,,,to order,Bulb holder and mains flex removed
+alpha,D2,DFRobot 5 V COB LED strip (warm white 3000 K),Optional smooth dimming test,The Pi Hut,FIT0876,1,3.80,,,optional,Driven by Q1 from GPIO13
+alpha,Q1,IRLB8721 logic-level MOSFET,Optional driver for D2,RS or The Pi Hut,,1,,,,optional,

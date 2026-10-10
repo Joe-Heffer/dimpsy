@@ -96,6 +96,7 @@ nav:
       - Roadmap: roadmap.md
       - Licensing: licensing.md
   - Prototype:
+      - Alpha build: alpha.md
       - First prototype: prototype.md
       - Safety: safety.md
       - Firmware: reference/firmware.md
@@ -113,6 +114,7 @@ nav:
       - 0006 LED candidate: decisions/0006-led-candidate.md
       - 0007 Microcontroller board: decisions/0007-microcontroller-board.md
       - 0008 Reuse from other projects: decisions/0008-reuse-from-other-projects.md
+      - 0009 Alpha build: decisions/0009-alpha-build.md
       - Decision template: decisions/template.md
   - Developers:
       - Developer tools: developers.md

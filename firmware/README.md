@@ -11,6 +11,7 @@ The Dimpsy prototype runs [ESPHome](https://esphome.io) on an ESP32 DevKitC. The
 ## Files
 
 * `esphome/dimpsy.yaml`: the ESPHome configuration.
+* `esphome/dimpsy-alpha.yaml`: the [alpha build](../docs/alpha.md), which adds an SK6812 RGBW strip, one encoder, a snooze button, an alarm toggle, a DS3231 clock and a sunrise ramp.
 * `esphome/dimpsy-web.yaml`: the same configuration without secrets, built for browser flashing from the website.
 * `esphome/secrets.yaml.example`: a template for `secrets.yaml`, which holds Wi-Fi and update passwords and is not committed.
 * `esphome/diagram.json`, `esphome/wokwi.toml` and `esphome/scenarios/`: the [Wokwi](https://wokwi.com) simulation (see below).

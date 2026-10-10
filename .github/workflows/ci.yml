@@ -93,6 +93,9 @@ jobs:
       - name: Build
         working-directory: firmware/esphome
         run: esphome compile dimpsy.yaml
+      - name: Build alpha
+        working-directory: firmware/esphome
+        run: esphome compile dimpsy-alpha.yaml
 
   core-tests:
     name: Firmware core tests
