@@ -21,3 +21,13 @@ updates:
       default-days: 7
     commit-message:
       prefix: docs
+
+  # ESPHome version used by CI (firmware/esphome/requirements.txt).
+  - package-ecosystem: pip
+    directory: /firmware/esphome
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: build

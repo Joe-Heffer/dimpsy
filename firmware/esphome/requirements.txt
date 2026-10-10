@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Joe Heffer
+#
+# SPDX-License-Identifier: MIT
+
+# ESPHome version for CI and local builds. Dependabot proposes upgrades,
+# and the weekly scheduled workflow tries the latest release.
+esphome==2026.9.1

@@ -81,12 +81,12 @@ jobs:
             ~/.cache/pip
             ~/.platformio
             ~/.cache/esphome
-          key: ${{ runner.os }}-esphome-${{ hashFiles('firmware/esphome/dimpsy.yaml') }}
+          key: ${{ runner.os }}-esphome-${{ hashFiles('firmware/esphome/dimpsy.yaml', 'firmware/esphome/requirements.txt') }}
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
       - name: Install ESPHome
-        run: pip install --upgrade esphome
+        run: pip install -r firmware/esphome/requirements.txt
       - name: Create placeholder secrets
         working-directory: firmware/esphome
         run: cp secrets.yaml.example secrets.yaml
@@ -109,6 +109,32 @@ jobs:
         run: make -C firmware/core --no-print-directory -s csv | node firmware/core/test/curves_parity.js
       - name: Curve summary
         run: make -C firmware/core --no-print-directory -s summary >> "$GITHUB_STEP_SUMMARY"
+
+  # Undefined behaviour in the curve maths can pass the tests on x86 and
+  # still misbehave on the ESP32, so build with sanitisers under both compilers.
+  core-sanitisers:
+    name: Firmware core sanitisers (${{ matrix.compiler }})
+    needs: changes
+    if: needs.changes.outputs.firmware == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [g++, clang++]
+    env:
+      CXX: ${{ matrix.compiler }}
+      CXXFLAGS: >-
+        -std=c++17 -O1 -g -Wall -Wextra -Wpedantic -Wshadow -Werror
+        -fsanitize=address,undefined -fno-sanitize-recover=all
+        -fno-omit-frame-pointer
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Unit tests
+        run: make -C firmware/core test
+      - name: Curve tool
+        run: make -C firmware/core --no-print-directory -s csv > /dev/null
 
   esphome:
     name: Validate ESPHome config
@@ -137,7 +163,7 @@ jobs:
           python-version: "3.12"
       - name: Install ESPHome
         if: steps.find.outputs.found == 'true'
-        run: pip install --upgrade esphome
+        run: pip install -r firmware/esphome/requirements.txt
       - name: Validate
         if: steps.find.outputs.found == 'true'
         working-directory: firmware/esphome
